@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="492.0" prefWidth="704.0" styleClass="cover" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.LoginController">
+   <children>
+      <ImageView fitHeight="176.0" fitWidth="134.0" layoutX="279.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/Sri_Lanka_Police_logo.svg.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtUsername" focusColor="#f2f2f2" labelFloat="true" layoutX="262.0" layoutY="275.0" prefHeight="26.0" prefWidth="197.0" promptText="username" styleClass="text-field" stylesheets="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/css/style.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="216.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/assests/icons8-user-male-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="221.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/assests/icons8-password-filled-100.png" />
+         </image>
+      </ImageView>
+      <JFXPasswordField fx:id="txtPassword" focusColor="WHITE" labelFloat="true" layoutX="259.0" layoutY="331.0" prefHeight="26.0" prefWidth="204.0" promptText="password" styleClass="text-field" stylesheets="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/css/style.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXPasswordField>
+   </children>
+</AnchorPane>
