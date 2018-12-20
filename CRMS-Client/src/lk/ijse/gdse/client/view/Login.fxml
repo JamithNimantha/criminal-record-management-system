@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="492.0" prefWidth="704.0" styleClass="cover" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.LoginController">
+<AnchorPane prefHeight="411.0" prefWidth="633.0" styleClass="cover" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.LoginController">
    <children>
-      <ImageView fitHeight="176.0" fitWidth="134.0" layoutX="279.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgLogo" fitHeight="176.0" fitWidth="134.0" layoutX="256.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/Sri_Lanka_Police_logo.svg.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtUsername" focusColor="#f2f2f2" labelFloat="true" layoutX="262.0" layoutY="275.0" prefHeight="26.0" prefWidth="197.0" promptText="username" styleClass="text-field" stylesheets="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/css/style.css" unFocusColor="WHITE">
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="192.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icons8-user-male-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="25.0" layoutX="192.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icons8-password-filled-100.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtID" layoutX="238.0" layoutY="257.0" onAction="#txtIDOnAction" promptText="user ID" />
+      <PasswordField fx:id="txtPass" layoutX="238.0" layoutY="302.0" onAction="#txtPassOnAction" />
+      <JFXButton fx:id="btnLogin" layoutX="281.0" layoutY="346.0" onAction="#btnLoginInOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Login">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
-      </JFXTextField>
-      <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="216.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/assests/icons8-user-male-100.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="221.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/assests/icons8-password-filled-100.png" />
-         </image>
-      </ImageView>
-      <JFXPasswordField fx:id="txtPassword" focusColor="WHITE" labelFloat="true" layoutX="259.0" layoutY="331.0" prefHeight="26.0" prefWidth="204.0" promptText="password" styleClass="text-field" stylesheets="@../../../../../../../../Dinemore/Dinemore-Client/src/lk/ijse/dinemore/css/style.css" unFocusColor="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXPasswordField>
+      </JFXButton>
    </children>
 </AnchorPane>

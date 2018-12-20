@@ -7,9 +7,6 @@
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
 
-.button {
-    -fx-rotate: 45;
-}
 .loaderBackground{
     -fx-background-image: url("../assests/BakucW.jpg");
     -fx-background-color: #000;
@@ -21,6 +18,9 @@
 .bar {
    // -fx-accent: #3569bb;
     -fx-background-color: rgba(74, 57, 174, 0.98);
+}
+.login-text-field{
+    -fx-background-color: transparent;
 }
 
 .text-field {

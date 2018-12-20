@@ -6,6 +6,7 @@ import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lk.ijse.gdse.client.common.PreLoader;
 
@@ -19,6 +20,8 @@ public class StartUp extends Application {
         Scene scene = new Scene(parent);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
+        //primaryStage.getIcons().add(new Image("lk/ijse/gdse/client/assests/Sri_Lanka_Police_logo.svg.png"));
+        primaryStage.getIcons().add(new Image("/lk/ijse/gdse/client/assests/icons8-user-male-100.png"));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

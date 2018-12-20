@@ -4,6 +4,7 @@ import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lk.ijse.gdse.client.controller.LoadingController;
@@ -26,6 +27,7 @@ public class PreLoader extends Preloader{
         this.preLoaderStage=primaryStage;
         preLoaderStage.initStyle(StageStyle.UNDECORATED);
         preLoaderStage.setScene(scene);
+        primaryStage.getIcons().add(new Image("/lk/ijse/gdse/client/assests/icons8-password-filled-100.png"));
         primaryStage.show();
     }
 
