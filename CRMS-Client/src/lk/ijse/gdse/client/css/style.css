@@ -32,7 +32,7 @@ input[type="text"] {
     color: #0000ff;
 }
 .colorChange:hover{
-    -fx-background-color: #11a0a3;
+    -fx-background-color: #5b6c87;
 //-fx-accent: #0093ff;
 }
 .colorChange:focused{
