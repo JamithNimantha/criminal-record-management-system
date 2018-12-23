@@ -16,10 +16,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import lk.ijse.gdse.client.common.Notification;
+import lk.ijse.gdse.client.proxy.ProxyHandler;
+import lk.ijse.gdse.common.dto.UserDTO;
+import lk.ijse.gdse.common.service.ServiceFactory;
+import lk.ijse.gdse.common.service.custom.UserService;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Blob;
 import java.util.ResourceBundle;
 
 public class ManageUserController implements Initializable {
@@ -72,6 +79,8 @@ public class ManageUserController implements Initializable {
     @FXML
     private TableView<?> tblUser;
 
+    private File file;
+
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
 
@@ -79,6 +88,34 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+        try {
+            byte[] bytes = new byte[(int) file.length()];
+            FileInputStream fileInputStream = new FileInputStream(file);
+            fileInputStream.read(bytes);
+            fileInputStream.close();
+            UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
+            boolean b = userService.addUser(
+                    new UserDTO(
+                            txtID.getText(),
+                            txtName.getText(),
+                            txtPosition.getText(),
+                            cmbPermission.getValue().toString(),
+                            txtDepartment.getText(),
+                            txtAddress.getText(),
+                            txtEmail.getText(),
+                            txtTel.getText(),
+                            txtPass.getText(),
+                            bytes
+                    ));
+            if (b){
+                Notification.createSuccesful("Successfull","User Added Successfully");
+            }else {
+                Notification.createError("Failed","User Cannot be Added");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -96,7 +133,7 @@ public class ManageUserController implements Initializable {
             fileChooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("Image Files",
                              "*.png", "*.jpg"));
-            File file = fileChooser.showOpenDialog(new Stage());
+            file = fileChooser.showOpenDialog(new Stage());
             if (file!=null){
                 String imagePath= file.toURI().toURL().toString();
                 if (imgPhoto!=null){
