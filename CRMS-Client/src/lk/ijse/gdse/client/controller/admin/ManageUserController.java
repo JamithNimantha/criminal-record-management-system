@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +28,7 @@ import java.io.FileInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Blob;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ManageUserController implements Initializable {
@@ -77,7 +79,9 @@ public class ManageUserController implements Initializable {
     private JFXPasswordField txtPass;
 
     @FXML
-    private TableView<?> tblUser;
+    private TableView<UserDTO> tblUser;
+
+    UserService userService;
 
     private File file;
 
@@ -93,7 +97,7 @@ public class ManageUserController implements Initializable {
             FileInputStream fileInputStream = new FileInputStream(file);
             fileInputStream.read(bytes);
             fileInputStream.close();
-            UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
+            //UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
             boolean b = userService.addUser(
                     new UserDTO(
                             txtID.getText(),
@@ -109,6 +113,7 @@ public class ManageUserController implements Initializable {
                     ));
             if (b){
                 Notification.createSuccesful("Successfull","User Added Successfully");
+                getAllUsers();
             }else {
                 Notification.createError("Failed","User Cannot be Added");
             }
@@ -215,6 +220,28 @@ public class ManageUserController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setPermission();
+        tblUser.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("ID"));
+        tblUser.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+        tblUser.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("position"));
+        tblUser.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("department"));
+        tblUser.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("permissionLevel"));
+        getAllUsers();
+
+    }
+    private void getAllUsers(){
+        List<UserDTO> allUsers = null;
+        try {
+            allUsers = userService.getAllUsers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tblUser.setItems(FXCollections.observableArrayList(allUsers));
+
     }
 }
