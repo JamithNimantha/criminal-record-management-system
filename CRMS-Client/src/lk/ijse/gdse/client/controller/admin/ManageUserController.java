@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,8 +24,9 @@ import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.UserService;
 
-import java.io.File;
-import java.io.FileInputStream;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Blob;
@@ -93,10 +95,15 @@ public class ManageUserController implements Initializable {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         try {
-            byte[] bytes = new byte[(int) file.length()];
-            FileInputStream fileInputStream = new FileInputStream(file);
-            fileInputStream.read(bytes);
-            fileInputStream.close();
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
+            byte [] bytes = byteArrayOutputStream.toByteArray();
+            byteArrayOutputStream.close();
+//            byte[] bytes = new byte[(int) file.length()];
+//            FileInputStream fileInputStream = new FileInputStream(file);
+//            fileInputStream.read(bytes);
+//            fileInputStream.close();
             //UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
             boolean b = userService.addUser(
                     new UserDTO(
@@ -120,14 +127,45 @@ public class ManageUserController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        try {
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
+            byte [] bit = byteArrayOutputStream.toByteArray();
+            byteArrayOutputStream.close();
+//            byte[] bytes = new byte[(int) file.length()];
+//            FileInputStream fileInputStream = new FileInputStream(file);
+//            fileInputStream.read(bytes);
+//            fileInputStream.close();
+            boolean b = userService.updateUSer(
+                    new UserDTO(
+                            txtID.getText(),
+                            txtName.getText(),
+                            txtPosition.getText(),
+                            cmbPermission.getValue().toString(),
+                            txtDepartment.getText(),
+                            txtAddress.getText(),
+                            txtEmail.getText(),
+                            txtTel.getText(),
+                            txtPass.getText(),
+                            bit
 
+                    ));
+            if (b){
+                Notification.createSuccesful("Successfull","User Updated Successfully");
+                getAllUsers();
+            }else {
+                Notification.createError("Failed","User Cannot be Update");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     void btnUploadOnAction(ActionEvent event) {
@@ -145,6 +183,7 @@ public class ManageUserController implements Initializable {
                     imgPhoto.setImage(null);
                 }
                 imgPhoto.setImage(new Image(imagePath));
+                //imgPhoto.getImage();
                 imgPhoto.setFitHeight(190);
                 imgPhoto.setFitWidth(210);
                 imgPhoto.setPreserveRatio(true);
@@ -166,8 +205,41 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void tblUserOnMouseClicked(MouseEvent event) {
+        if (tblUser.getSelectionModel().getSelectedIndex()!=-1){
+            UserDTO selectedItem = tblUser.getSelectionModel().getSelectedItem();
+            txtID.setText(selectedItem.getID());
+            txtName.setText(selectedItem.getName());
+            txtPosition.setText(selectedItem.getPosition());
+            txtDepartment.setText(selectedItem.getDepartment());
+            cmbPermission.setValue(selectedItem.getPermissionLevel());
+            txtAddress.setText(selectedItem.getAddress());
+            txtEmail.setText(selectedItem.getEmail());
+            txtTel.setText(selectedItem.getTelphone());
+            txtPass.setText(selectedItem.getPassword());
+            imgPhoto.setImage(new Image(new ByteArrayInputStream(selectedItem.getPhoto())));
+            imgPhoto.setFitHeight(190);
+            imgPhoto.setFitWidth(210);
+            imgPhoto.setPreserveRatio(true);
+            imgPhoto.setSmooth(true);
+//            file = new File(""+txtID.getText());
+//            try {
+//                BufferedImage bufferedImage = ImageIO.read(selectedItem.getPhoto());
+//                ByteArrayOutputStream byteArrayOutputStream= new ByteArrayOutputStream();
+//                ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+        }
 
     }
+
+//    private void setPhoto(){
+//        imgPhoto.setImage(new Image(imagePath));
+//        imgPhoto.setFitHeight(190);
+//        imgPhoto.setFitWidth(210);
+//        imgPhoto.setPreserveRatio(true);
+//        imgPhoto.setSmooth(true);
+//    }
 
     @FXML
     void txtAddressOnAction(ActionEvent event) {
