@@ -21,13 +21,11 @@ public class ProxyHandler implements ServiceFactory {
         return proxyHandler;
     }
 
-    public ProxyHandler() {
+    private ProxyHandler() {
         try {
             ServiceFactory serviceFactory = (ServiceFactory) Naming.lookup("rmi://127.0.0.1:5050/CRMS");
             userService = serviceFactory.getSuperService(ServiceTypes.USER);
-        } catch (NotBoundException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
+        } catch (NotBoundException | MalformedURLException e) {
             e.printStackTrace();
         } catch (RemoteException e) {
             e.printStackTrace();
