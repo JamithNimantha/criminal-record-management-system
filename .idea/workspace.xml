@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56af7d48-15db-4aec-a338-ec7fc3403037" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,7 +35,7 @@
           <entry key="dummy" value="21" />
           <entry key="fxml" value="19" />
           <entry key="gitignore" value="7" />
-          <entry key="java" value="7050" />
+          <entry key="java" value="7179" />
           <entry key="properties" value="332" />
           <entry key="sql" value="71" />
         </counts>
@@ -44,7 +43,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="214" />
-          <entry key="JAVA" value="7050" />
+          <entry key="JAVA" value="7179" />
           <entry key="PLAIN_TEXT" value="28" />
           <entry key="Properties" value="332" />
           <entry key="SQL" value="71" />
@@ -58,7 +57,7 @@
           <entry key="css" value="4" />
           <entry key="fxml" value="9" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="103" />
+          <entry key="java" value="105" />
           <entry key="properties" value="7" />
           <entry key="sql" value="1" />
         </counts>
@@ -67,7 +66,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="CSS" value="4" />
-          <entry key="JAVA" value="103" />
+          <entry key="JAVA" value="105" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="7" />
           <entry key="SQL" value="1" />
@@ -81,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="150" column="23" lean-forward="true" selection-start-line="138" selection-start-column="12" selection-end-line="150" selection-end-column="23" />
+            <state relative-caret-position="236">
+              <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,8 +101,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="91" column="84" selection-start-line="91" selection-start-column="84" selection-end-line="91" selection-end-column="84" />
+            <state relative-caret-position="385">
+              <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1176#1177#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/startup/StartUp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,7 +224,6 @@
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/impl/UserBusinessImpl.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/settings/DB.properties" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/DB.properties" />
-        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/server/ServerStartUp.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/resources/HibUtil.java" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/common/Notification.java" />
@@ -211,6 +232,7 @@
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/service/custom/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Assets/db.sql" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" />
       </list>
     </option>
@@ -642,7 +664,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545719708831" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545720536125" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestHibranate" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -729,12 +751,12 @@
       <workItem from="1545305647431" duration="3013000" />
       <workItem from="1545371642770" duration="1924000" />
       <workItem from="1545397402647" duration="13896000" />
-      <workItem from="1545487347170" duration="42431000" />
+      <workItem from="1545487347170" duration="43261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83742000" />
+    <option name="totallyTimeSpent" value="84572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,6 +769,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="-4" width="1328" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25663027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -758,7 +781,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921174" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12210201" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1576507" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -900,13 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/startup/StartUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1065,16 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/common/Notification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -1198,10 +1204,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/startup/StartUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="150" column="23" lean-forward="true" selection-start-line="138" selection-start-column="12" selection-end-line="150" selection-end-column="23" />
+        <state relative-caret-position="236">
+          <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1210,10 +1233,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="91" column="84" selection-start-line="91" selection-start-column="84" selection-end-line="91" selection-end-column="84" />
+        <state relative-caret-position="385">
+          <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
           </folding>
         </state>
       </provider>

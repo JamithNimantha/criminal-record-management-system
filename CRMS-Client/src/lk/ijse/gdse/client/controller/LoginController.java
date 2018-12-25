@@ -1,7 +1,6 @@
 package lk.ijse.gdse.client.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.javafx.application.LauncherImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +16,6 @@ import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.UserService;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -36,10 +33,27 @@ public class LoginController implements Initializable {
     @FXML
     private JFXButton btnLogin;
 
-    UserService userService;
+    private UserService userService;
 
     @FXML
     void btnLoginInOnAction(ActionEvent event){
+        checkLogin();
+
+    }
+
+
+    @FXML
+    void txtIDOnAction(ActionEvent event) {
+        txtPass.requestFocus();
+    }
+
+    @FXML
+    void txtPassOnAction(ActionEvent event) {
+        checkLogin();
+
+    }
+
+    private void checkLogin(){
         /*
         ********************************
         One time ID and Pass Generation
@@ -86,31 +100,28 @@ public class LoginController implements Initializable {
                             break;
                         case "Investigator":
                             break;
-                            default:
+                        default:
                     }
                 }else {
                     Notification.createError("Invalid Password","Please Enter valid Password");
+                    txtPass.clear();
+                    txtPass.requestFocus();
                 }
             }else {
                 Notification.createError("Login Details Empty","Please Enter Login Details");
+                txtID.requestFocus();
             }
 
         } catch (Exception e) {
             Notification.createError("Invalid UserID","Please Enter Valid UserID");
             //e.printStackTrace();
+            clearText();
+            txtID.requestFocus();
         }
-
     }
-
-
-    @FXML
-    void txtIDOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void txtPassOnAction(ActionEvent event) {
-
+    private void clearText(){
+        txtID.clear();
+        txtPass.clear();
     }
 
     @Override
