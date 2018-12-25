@@ -85,21 +85,52 @@ public class ManageUserController implements Initializable {
 
     UserService userService;
 
-    private File file;
 
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnSaveOnAction(ActionEvent event) {
         try {
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
             byte [] bytes = byteArrayOutputStream.toByteArray();
             byteArrayOutputStream.close();
+            boolean b = userService.deleteUser(
+                    new UserDTO(
+                            txtID.getText(),
+                            txtName.getText(),
+                            txtPosition.getText(),
+                            cmbPermission.getValue().toString(),
+                            txtDepartment.getText(),
+                            txtAddress.getText(),
+                            txtEmail.getText(),
+                            txtTel.getText(),
+                            txtPass.getText(),
+                            bytes
+
+                    ));
+            if (b){
+                Notification.createSuccesful("Successfull","User Removed Successfully");
+                getAllUsers();
+                clearfields();
+            }else {
+                Notification.createError("Failed","User Cannot be Remove");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void btnSaveOnAction(ActionEvent event) {
+        try {
+            //----convert image as a byte stream
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
+            byte [] bytes = byteArrayOutputStream.toByteArray();
+            byteArrayOutputStream.close();
+            //----convert file as a byte stream
 //            byte[] bytes = new byte[(int) file.length()];
 //            FileInputStream fileInputStream = new FileInputStream(file);
 //            fileInputStream.read(bytes);
@@ -121,6 +152,7 @@ public class ManageUserController implements Initializable {
             if (b){
                 Notification.createSuccesful("Successfull","User Added Successfully");
                 getAllUsers();
+                clearfields();
             }else {
                 Notification.createError("Failed","User Cannot be Added");
             }
@@ -135,12 +167,8 @@ public class ManageUserController implements Initializable {
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
-            byte [] bit = byteArrayOutputStream.toByteArray();
+            byte [] bytes = byteArrayOutputStream.toByteArray();
             byteArrayOutputStream.close();
-//            byte[] bytes = new byte[(int) file.length()];
-//            FileInputStream fileInputStream = new FileInputStream(file);
-//            fileInputStream.read(bytes);
-//            fileInputStream.close();
             boolean b = userService.updateUSer(
                     new UserDTO(
                             txtID.getText(),
@@ -152,12 +180,13 @@ public class ManageUserController implements Initializable {
                             txtEmail.getText(),
                             txtTel.getText(),
                             txtPass.getText(),
-                            bit
+                            bytes
 
                     ));
             if (b){
                 Notification.createSuccesful("Successfull","User Updated Successfully");
                 getAllUsers();
+                clearfields();
             }else {
                 Notification.createError("Failed","User Cannot be Update");
             }
@@ -176,7 +205,7 @@ public class ManageUserController implements Initializable {
             fileChooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("Image Files",
                              "*.png", "*.jpg"));
-            file = fileChooser.showOpenDialog(new Stage());
+            File file = fileChooser.showOpenDialog(new Stage());
             if (file!=null){
                 String imagePath= file.toURI().toURL().toString();
                 if (imgPhoto!=null){
@@ -277,7 +306,8 @@ public class ManageUserController implements Initializable {
     }
 
     @FXML
-    void txtSearchOnAction(ActionEvent event) {
+    void btnSearchOnAction(ActionEvent event) {
+        clearfields();
 
     }
 
@@ -316,4 +346,17 @@ public class ManageUserController implements Initializable {
         tblUser.setItems(FXCollections.observableArrayList(allUsers));
 
     }
+    private void clearfields(){
+        txtID.clear();
+        txtName.clear();
+        txtPosition.clear();
+        txtDepartment.clear();
+        setPermission();
+        txtEmail.clear();
+        txtAddress.clear();
+        txtTel.clear();
+        txtPass.clear();
+        imgPhoto.setImage(new Image("lk/ijse/gdse/client/assests/icons8-administrator-male-100.png"));
+    }
+
 }

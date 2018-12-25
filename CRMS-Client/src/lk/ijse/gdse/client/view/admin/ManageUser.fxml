@@ -26,7 +26,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnSearch" layoutX="470.0" layoutY="25.0" onAction="#txtSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
+      <JFXButton fx:id="btnSearch" layoutX="470.0" layoutY="25.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
       <JFXButton fx:id="btnSave" layoutX="315.0" layoutY="288.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
       <JFXButton fx:id="btnUpdate" layoutX="447.0" layoutY="288.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
       <JFXButton fx:id="btnRemove" layoutX="580.0" layoutY="288.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
