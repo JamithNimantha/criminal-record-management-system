@@ -43,7 +43,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbPermission" labelFloat="true" layoutX="496.0" layoutY="116.0" onAction="#cmbPermissionOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Permission Level" />
+      <JFXComboBox fx:id="cmbPermission" labelFloat="true" layoutX="496.0" layoutY="116.0" onAction="#cmbPermissionOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Permission Level" style="-fx-font-weight: bold;" />
       <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="238.0" layoutY="199.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Official Address">
          <font>
             <Font name="System Bold" size="13.0" />

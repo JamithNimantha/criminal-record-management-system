@@ -47,6 +47,17 @@ public class DashboardController {
 
     @FXML
     void btnCriminalsOnAction(ActionEvent event) {
+        Node node= null;
+        try {
+            node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/user/ManageCriminal.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!pnlMain.getChildren().isEmpty()){
+            pnlMain.getChildren().remove(0);
+        }
+        pnlMain.getChildren().add(node);
+
 
     }
 
@@ -73,6 +84,16 @@ public class DashboardController {
 
     @FXML
     void btnRecordsOnAction(ActionEvent event) {
+        Node node= null;
+        try {
+            node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/user/ManageRecords.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!pnlMain.getChildren().isEmpty()){
+            pnlMain.getChildren().remove(0);
+        }
+        pnlMain.getChildren().add(node);
 
     }
 
