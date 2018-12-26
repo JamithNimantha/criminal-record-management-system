@@ -6,6 +6,7 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,35 +14,35 @@
 
 <AnchorPane prefHeight="706.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.user.ManageRecordsController">
    <children>
-      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="65.0" layoutY="38.0" onAction="#txtIDOnAction" prefHeight="26.0" prefWidth="200.0" promptText="ID">
+      <JFXTextField fx:id="txtRecordID" labelFloat="true" layoutX="65.0" layoutY="38.0" onAction="#txtRecordIDOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Record ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="64.0" layoutY="80.0" onAction="#txtNameOnAction" prefHeight="26.0" prefWidth="651.0" promptText="Record Name">
+      <JFXTextField fx:id="txtRecordName" labelFloat="true" layoutX="64.0" layoutY="80.0" onAction="#txtRecordNameOnAction" prefHeight="26.0" prefWidth="651.0" promptText="Record Name">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPosition" labelFloat="true" layoutX="65.0" layoutY="205.0" onAction="#txtName" prefHeight="26.0" prefWidth="369.0" promptText="Victims Name">
+      <JFXTextField fx:id="txtVictimName" labelFloat="true" layoutX="65.0" layoutY="205.0" onAction="#txtVictimNameOnAction" prefHeight="26.0" prefWidth="369.0" promptText="Victims Name">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtDepartment" labelFloat="true" layoutX="476.0" layoutY="119.0" onAction="#txtDepartmentOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Incident Location">
+      <JFXTextField fx:id="txtIncidentLocation" labelFloat="true" layoutX="476.0" layoutY="119.0" onAction="#txtLocationOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Incident Location">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbPermission" labelFloat="true" layoutX="66.0" layoutY="119.0" onAction="#cmbPermissionOnAction" prefHeight="26.0" prefWidth="369.0" promptText="Record Category" style="-fx-font-weight: bold;" />
-      <JFXTextArea labelFloat="true" layoutX="66.0" layoutY="253.0" prefHeight="90.0" prefWidth="880.0" promptText="Record Description">
+      <JFXComboBox fx:id="cmbRecordcategory" labelFloat="true" layoutX="66.0" layoutY="119.0" onAction="#cmbRecordcategoryOnAction" prefHeight="26.0" prefWidth="369.0" promptText="Record Category" style="-fx-font-weight: bold;" />
+      <JFXTextArea fx:id="txtRecordDescription" labelFloat="true" layoutX="66.0" layoutY="253.0" prefHeight="90.0" prefWidth="880.0" promptText="Record Description">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextArea>
-      <JFXDatePicker layoutX="65.0" layoutY="162.0" promptText="Incident Date" style="-fx-font-weight: bold;" />
-      <JFXTimePicker layoutX="287.0" layoutY="161.0" promptText="Incident Time" style="-fx-font-weight: bold;" />
-      <TableView layoutX="11.0" layoutY="410.0" prefHeight="291.0" prefWidth="957.0">
+      <JFXDatePicker fx:id="dateIncidentDate" layoutX="65.0" layoutY="162.0" onAction="#dateIncidentDateOnAction" promptText="Incident Date" style="-fx-font-weight: bold;" />
+      <JFXTimePicker fx:id="timeIncidentTime" layoutX="287.0" layoutY="161.0" onAction="#timeIncidentTimeOnAction" promptText="Incident Time" style="-fx-font-weight: bold;" />
+      <TableView fx:id="tblRecords" layoutX="11.0" layoutY="410.0" prefHeight="291.0" prefWidth="957.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
             <TableColumn prefWidth="222.0" text="Record Category" />
@@ -50,9 +51,15 @@
             <TableColumn prefWidth="223.0" text="Victim Name" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnSearch" layoutX="321.0" layoutY="39.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="clear" />
+      <JFXButton fx:id="btnSearch" layoutX="321.0" layoutY="39.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
       <JFXButton fx:id="btnSave" layoutX="230.0" layoutY="362.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
       <JFXButton fx:id="btnUpdate" layoutX="362.0" layoutY="362.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
       <JFXButton fx:id="btnRemove" layoutX="495.0" layoutY="362.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
+      <ButtonBar layoutX="406.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0" />
+      <JFXTextField fx:id="txtInvestigatingOfficer" labelFloat="true" layoutX="461.0" layoutY="205.0" onAction="#txtInvestigatingOfficerOnAcion" prefHeight="26.0" prefWidth="369.0" promptText="Case Investigating Officer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>
