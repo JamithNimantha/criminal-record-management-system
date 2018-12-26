@@ -16,6 +16,8 @@ import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.UserService;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -88,17 +90,13 @@ public class LoginController implements Initializable {
                 if (txtPass.getText().equals(userDTO.getPassword())){
                     switch (userDTO.getPermissionLevel()){
                         case "Administrator":
-                            Stage stage= (Stage) btnLogin.getScene().getWindow();
-                            Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/admin/DashBoard.fxml"));
-                            Scene scene = new Scene(parent);
-                            stage.setScene(scene);
-                            stage.centerOnScreen();
-                            stage.setResizable(false);
-                            stage.show();
+                            path("/lk/ijse/gdse/client/view/admin/DashBoard.fxml");
                             break;
                         case "Officer":
+                            //path("/lk/ijse/gdse/client/view/user/DashBoard.fxml");
                             break;
                         case "Investigator":
+                            path("/lk/ijse/gdse/client/view/user/DashBoard.fxml");
                             break;
                         default:
                     }
@@ -118,6 +116,21 @@ public class LoginController implements Initializable {
             clearText();
             txtID.requestFocus();
         }
+    }
+
+    private void path(String path){
+        Stage stage= (Stage) btnLogin.getScene().getWindow();
+        Parent parent = null;
+        try {
+            parent = FXMLLoader.load(this.getClass().getResource(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        stage.show();
     }
     private void clearText(){
         txtID.clear();

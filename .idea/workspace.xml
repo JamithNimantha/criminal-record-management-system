@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56af7d48-15db-4aec-a338-ec7fc3403037" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/assests/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/assests/Sri_lanka.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/assests/sri_lanka 2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/admin/ManageUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/admin/ManageUser.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,27 +22,28 @@
     <session id="-747478885">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.68" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="214" />
-          <entry key="dummy" value="21" />
-          <entry key="fxml" value="19" />
+          <entry key="dummy" value="41" />
+          <entry key="fxml" value="22" />
           <entry key="gitignore" value="7" />
-          <entry key="java" value="7179" />
+          <entry key="java" value="7904" />
           <entry key="properties" value="332" />
           <entry key="sql" value="71" />
         </counts>
@@ -43,11 +51,11 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="214" />
-          <entry key="JAVA" value="7179" />
-          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="JAVA" value="7904" />
+          <entry key="PLAIN_TEXT" value="48" />
           <entry key="Properties" value="332" />
           <entry key="SQL" value="71" />
-          <entry key="XML" value="19" />
+          <entry key="XML" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,9 +63,9 @@
           <entry key="LICENSE" value="1" />
           <entry key="class" value="2" />
           <entry key="css" value="4" />
-          <entry key="fxml" value="9" />
+          <entry key="fxml" value="12" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="105" />
+          <entry key="java" value="117" />
           <entry key="properties" value="7" />
           <entry key="sql" value="1" />
         </counts>
@@ -66,11 +74,11 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="CSS" value="4" />
-          <entry key="JAVA" value="105" />
+          <entry key="JAVA" value="117" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="7" />
           <entry key="SQL" value="1" />
-          <entry key="XML" value="9" />
+          <entry key="XML" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -78,10 +86,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+            <state relative-caret-position="430">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,42 +98,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/db.sql">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/ManageCriminalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/ManageRecordsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1176#1177#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/startup/StartUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="96" column="34" lean-forward="true" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +143,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/service/custom/impl/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/Criminal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+            <state relative-caret-position="285">
+              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,13 +164,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/impl/UserBusinessImpl.java">
+        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="109" column="73" selection-start-line="109" selection-start-column="73" selection-end-line="109" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/CriminalRecordDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -163,9 +187,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Singleton" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -199,7 +223,6 @@
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/startup/StartUp.java" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/admin/DashBoard.fxml" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/css/style.css" />
-        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java" />
         <option value="$PROJECT_DIR$/CRMS-Common/src/lk/ijse/gdse/common/dto/SuperDTO.java" />
         <option value="$PROJECT_DIR$/CRMS-Common/src/lk/ijse/gdse/common/service/ServiceFactory.java" />
         <option value="$PROJECT_DIR$/CRMS-Common/src/lk/ijse/gdse/common/service/SuperFactory.java" />
@@ -229,11 +252,18 @@
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/common/Notification.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/Hibernate.properties" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/admin/ManageUser.fxml" />
-        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java" />
         <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/service/custom/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Assets/db.sql" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user/DashBoard.fxml" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/DashboardController.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user/ManageCriminal.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/ManageCriminal.java" />
+        <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user/ManageRecords.fxml" />
         <option value="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/Criminal.java" />
       </list>
     </option>
   </component>
@@ -320,100 +350,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="criminal-record-management-system" type="58d84e3e:PackageViewProjectNode" />
-              <item name="criminal-record-management-system" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="custom" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="custom" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="impl" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -459,6 +395,14 @@
               <item name="CRMS-Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRMS-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -489,6 +433,14 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRMS-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="criminal-record-management-system" type="b2602c69:ProjectViewProjectNode" />
@@ -647,13 +599,99 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="criminal-record-management-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CRMS-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="criminal-record-management-system" type="58d84e3e:PackageViewProjectNode" />
+              <item name="criminal-record-management-system" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="custom" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="criminal-record-management-system" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="CRMS-Server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ijse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gdse" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="business" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="custom" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="impl" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -664,7 +702,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545720536125" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545799080508" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestHibranate" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -675,7 +713,14 @@
     <property name="settings.editor.selected.configurable" value="Debugger_Data_Views_Java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="lk.ijse.gdse.client.controller.user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.gdse.client.controller.user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user" />
       <recent name="$PROJECT_DIR$/CRMS-Server/src" />
       <recent name="$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server" />
     </key>
@@ -751,12 +796,13 @@
       <workItem from="1545305647431" duration="3013000" />
       <workItem from="1545371642770" duration="1924000" />
       <workItem from="1545397402647" duration="13896000" />
-      <workItem from="1545487347170" duration="43261000" />
+      <workItem from="1545487347170" duration="49974000" />
+      <workItem from="1545795887527" duration="2966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84572000" />
+    <option name="totallyTimeSpent" value="94251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -768,10 +814,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="-4" width="1328" height="772" extended-state="6" />
+    <frame x="1404" y="90" width="1328" height="747" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25663027" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2605304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -781,14 +827,14 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921174" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1576507" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45749614" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32921174" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.38948995" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.7187017" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.47449768" />
@@ -842,80 +888,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoadingController.fxml" />
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/Loading.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/Login.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jfoenix.jar!/com/jfoenix/controls/JFXProgressBar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/admin/DashBoard.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoadingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/common/PreLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="45" selection-start-line="34" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,9 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
           <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -950,20 +923,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/BusinessFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/BusinessFactory.java" />
     <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/UserBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,20 +997,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/DB.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Server/settings/DB.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/DB.properties" />
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/settings/DB.properties" />
     <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/resources/HibUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1075,9 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,9 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,9 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,29 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/impl/UserBusinessImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="109" column="73" selection-start-line="109" selection-start-column="73" selection-end-line="109" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,30 +1097,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/service/custom/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1211,20 +1111,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/common/PreLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="45" selection-start-line="34" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoadingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/proxy/ProxyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/business/custom/impl/UserBusinessImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="109" column="73" selection-start-line="109" selection-start-column="73" selection-end-line="109" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user/DashBoard.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="215" selection-start-line="8" selection-start-column="215" selection-end-line="8" selection-end-column="215" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/ManageUserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+        <state relative-caret-position="2894">
+          <caret line="372" column="71" selection-start-line="372" selection-start-column="65" selection-end-line="372" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/user/ManageRecords.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/ManageRecordsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/ManageCriminalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/view/Login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/user/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1233,12 +1209,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        <state relative-caret-position="240">
+          <caret line="96" column="34" lean-forward="true" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/CriminalRecordDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Server/src/lk/ijse/gdse/server/entity/Criminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRMS-Client/src/lk/ijse/gdse/client/controller/admin/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

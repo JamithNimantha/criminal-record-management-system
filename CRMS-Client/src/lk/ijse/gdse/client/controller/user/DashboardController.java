@@ -1,7 +1,6 @@
-package lk.ijse.gdse.client.controller.admin;
+package lk.ijse.gdse.client.controller.user;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +25,7 @@ public class DashboardController {
     private JFXButton btnDash;
 
     @FXML
-    private JFXButton btnUser;
+    private JFXButton btnRecords;
 
     @FXML
     private JFXButton btnLogout;
@@ -42,6 +41,9 @@ public class DashboardController {
 
     @FXML
     private JFXButton btnReports;
+
+    @FXML
+    private JFXButton btnUser;
 
     @FXML
     void btnCriminalsOnAction(ActionEvent event) {
@@ -70,6 +72,11 @@ public class DashboardController {
     }
 
     @FXML
+    void btnRecordsOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
     void btnReportsOnAction(ActionEvent event) {
 
     }
@@ -85,7 +92,7 @@ public class DashboardController {
     }
 
     @FXML
-    void btnUserOnAction(ActionEvent event){
+    void btnUserOnAction(ActionEvent event) {
         Node node = null;
         try {
             node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/admin/ManageUser.fxml"));
@@ -96,6 +103,8 @@ public class DashboardController {
             pnlMain.getChildren().remove(0);
         }
         pnlMain.getChildren().add(node);
+
+
 
     }
 

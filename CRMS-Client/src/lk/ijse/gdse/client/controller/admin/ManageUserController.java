@@ -124,17 +124,31 @@ public class ManageUserController implements Initializable {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         try {
-            //----convert image as a byte stream
+            /*
+            ******************************
+            convert image as a byte stream
+            ******************************
+
+             */
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
             byte [] bytes = byteArrayOutputStream.toByteArray();
             byteArrayOutputStream.close();
-            //----convert file as a byte stream
-//            byte[] bytes = new byte[(int) file.length()];
-//            FileInputStream fileInputStream = new FileInputStream(file);
-//            fileInputStream.read(bytes);
-//            fileInputStream.close();
+            /*
+            ********************************
+             convert file as a byte stream
+            ********************************
+            *
+            *
+            byte[] bytes = new byte[(int) file.length()];
+            FileInputStream fileInputStream = new FileInputStream(file);
+            fileInputStream.read(bytes);
+            fileInputStream.close();
+            *
+            *
+            *
+             */
             //UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
             boolean b = userService.addUser(
                     new UserDTO(
