@@ -1,8 +1,8 @@
 package lk.ijse.gdse.server.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,35 +17,57 @@ public class Record {
     private Date incidentDate;
     @Temporal(TemporalType.TIME)
     private Date incidentTIme;
-    private String VictimsName;
+    private String victimsName;
     private String recordDec;
     @OneToMany(mappedBy = "record")
     private List<CriminalRecordDetails> criminalRecordDetails=new ArrayList<>();
 
     public Record() {
+
     }
 
-    public Record(String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
+    public Record(int recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
+        this.recordID = recordID;
         this.recordName = recordName;
         this.recordCategory = recordCategory;
         this.incidentLocation = incidentLocation;
         this.incidentDate = incidentDate;
         this.incidentTIme = incidentTIme;
-        VictimsName = victimsName;
+        this.victimsName = victimsName;
         this.recordDec = recordDec;
     }
 
-    public Record(String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec, List<CriminalRecordDetails> criminalRecordDetails) {
+    public Record(int recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec, List<CriminalRecordDetails> criminalRecordDetails) {
+        this.recordID = recordID;
         this.recordName = recordName;
         this.recordCategory = recordCategory;
         this.incidentLocation = incidentLocation;
         this.incidentDate = incidentDate;
         this.incidentTIme = incidentTIme;
-        VictimsName = victimsName;
+        this.victimsName = victimsName;
         this.recordDec = recordDec;
         this.criminalRecordDetails = criminalRecordDetails;
     }
+    //    public Record(String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
+//        this.recordName = recordName;
+//        this.recordCategory = recordCategory;
+//        this.incidentLocation = incidentLocation;
+//        this.incidentDate = incidentDate;
+//        this.incidentTIme = incidentTIme;
+//        this.victimsName = victimsName;
+//        this.recordDec = recordDec;
+//    }
 
+//    public Record(String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec, List<CriminalRecordDetails> criminalRecordDetails) {
+//        this.recordName = recordName;
+//        this.recordCategory = recordCategory;
+//        this.incidentLocation = incidentLocation;
+//        this.incidentDate = incidentDate;
+//        this.incidentTIme = incidentTIme;
+//        this.victimsName = victimsName;
+//        this.recordDec = recordDec;
+//        this.criminalRecordDetails = criminalRecordDetails;
+//    }
 
     public int getRecordID() {
         return recordID;
@@ -96,11 +118,11 @@ public class Record {
     }
 
     public String getVictimsName() {
-        return VictimsName;
+        return victimsName;
     }
 
     public void setVictimsName(String victimsName) {
-        VictimsName = victimsName;
+        this.victimsName = victimsName;
     }
 
     public String getRecordDec() {
@@ -117,5 +139,20 @@ public class Record {
 
     public void setCriminalRecordDetails(List<CriminalRecordDetails> criminalRecordDetails) {
         this.criminalRecordDetails = criminalRecordDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "recordID=" + recordID +
+                ", recordName='" + recordName + '\'' +
+                ", recordCategory='" + recordCategory + '\'' +
+                ", incidentLocation='" + incidentLocation + '\'' +
+                ", incidentDate=" + incidentDate +
+                ", incidentTIme=" + incidentTIme +
+                ", victimsName='" + victimsName + '\'' +
+                ", recordDec='" + recordDec + '\'' +
+                ", criminalRecordDetails=" + criminalRecordDetails +
+                '}';
     }
 }

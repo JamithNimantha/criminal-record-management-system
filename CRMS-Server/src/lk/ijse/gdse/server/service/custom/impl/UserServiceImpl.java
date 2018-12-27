@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl extends UnicastRemoteObject implements UserService {
-    UserBusiness userBusiness = BusinessFactory.getInstance().getBussinessFor(BusinessFactory.BusinessTypes.USER);
+    private UserBusiness userBusiness = BusinessFactory.getInstance().getBussinessFor(BusinessFactory.BusinessTypes.USER);
     private static ArrayList<Observer> allUserObservers= new ArrayList<>();
     private static ReservationsImpl<UserService> userServiceReservations = new ReservationsImpl<>();
 

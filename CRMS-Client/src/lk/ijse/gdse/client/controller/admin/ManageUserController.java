@@ -365,7 +365,7 @@ public class ManageUserController implements Initializable {
         txtName.clear();
         txtPosition.clear();
         txtDepartment.clear();
-        setPermission();
+        cmbPermission.setValue(null);
         txtEmail.clear();
         txtAddress.clear();
         txtTel.clear();

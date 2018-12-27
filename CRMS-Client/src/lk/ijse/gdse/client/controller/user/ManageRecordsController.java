@@ -1,26 +1,24 @@
 package lk.ijse.gdse.client.controller.user;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTimePicker;
+import com.jfoenix.controls.*;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import lk.ijse.gdse.client.common.Notification;
 import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.RecordDTO;
-import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.RecordService;
-
 import java.net.URL;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.*;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ManageRecordsController implements Initializable {
@@ -50,7 +48,7 @@ public class ManageRecordsController implements Initializable {
     private JFXTimePicker timeIncidentTime;
 
     @FXML
-    private TableView<?> tblRecords;
+    private TableView<RecordDTO> tblRecords;
 
     @FXML
     private JFXButton btnSearch;
@@ -64,44 +62,61 @@ public class ManageRecordsController implements Initializable {
     @FXML
     private JFXButton btnRemove;
 
-    @FXML
-    private JFXTextField txtInvestigatingOfficer;
-    private static RecordService recordService;
-    static {
-        try {
-            recordService= ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    private RecordService recordService;
 
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
+        boolean result = false;
+        try {
+            result = recordService.addRecord(
+                    new RecordDTO(
+                            Integer.parseInt(txtRecordID.getText()),
+                            txtRecordName.getText(),
+                            cmbRecordcategory.getSelectionModel().getSelectedItem(),
+                            txtIncidentLocation.getText(),
+                            Date.valueOf(dateIncidentDate.getValue()),
+                            Time.valueOf(timeIncidentTime.getValue()),
+                            txtVictimName.getText(),
+                            txtRecordDescription.getText()
+                    ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (result){
+            Notification.createSuccesful("Record Deleted","Crime Record Deleted Successfully");
+            clearFields();
+            getAllRecords();
+        }else {
+            Notification.createError("Failed","Crime Record Cannot be Delete");
+        }
 
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) throws Exception {
-
-        RecordDTO recordDTO=new RecordDTO(
-                Integer.parseInt(txtRecordID.getText()),
-                txtRecordName.getText(),
-                cmbRecordcategory.getSelectionModel().getSelectedItem(),
-                txtIncidentLocation.getText(),
-                new Date(),
-                new Date(),
-                txtVictimName.getText(),
-                txtRecordDescription.getText()
-        );
-        boolean result = recordService.addRecord(recordDTO);
+    void btnSaveOnAction(ActionEvent event) {
+        boolean result = false;
+        try {
+            result = recordService.addRecord(
+                    new RecordDTO(
+                        Integer.parseInt(txtRecordID.getText()),
+                        txtRecordName.getText(),
+                        cmbRecordcategory.getSelectionModel().getSelectedItem(),
+                        txtIncidentLocation.getText(),
+                        Date.valueOf(dateIncidentDate.getValue()),
+                        Time.valueOf(timeIncidentTime.getValue()),
+                        txtVictimName.getText(),
+                        txtRecordDescription.getText()
+                    ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (result){
-            Alert alert=new Alert(Alert.AlertType.CONFIRMATION,"FUCK", ButtonType.OK);
-            alert.show();
-        }else{
-            Alert alert=new Alert(Alert.AlertType.ERROR,"Buddhika Ponnaya", ButtonType.OK);
-            alert.show();
-
+            Notification.createSuccesful("Record Added","Crime Record Added Successfully");
+            setCrimeCategory();
+            clearFields();
+            getAllRecords();
+        }else {
+            Notification.createError("Failed","Crime Record Cannot be Add");
         }
 
 
@@ -109,61 +124,165 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        try {
+            RecordDTO selectedItem = recordService.searchRecord(Integer.parseInt(txtRecordID.getText()));
+            txtRecordID.setText(String.valueOf(selectedItem.getRecordID()));
+            txtRecordName.setText(selectedItem.getRecordName());
+            cmbRecordcategory.setValue(selectedItem.getRecordCategory());
+            txtIncidentLocation.setText(selectedItem.getIncidentLocation());
+            dateIncidentDate.setValue(fromDate(selectedItem.getIncidentDate()));
+            timeIncidentTime.setValue(fromTime(selectedItem.getIncidentTIme()));
+            txtVictimName.setText(selectedItem.getVictimsName());
+            txtRecordDescription.setText(selectedItem.getRecordDec());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        boolean result = false;
+        try {
+            result = recordService.updateRecord(
+                    new RecordDTO(
+                            Integer.parseInt(txtRecordID.getText()),
+                            txtRecordName.getText(),
+                            cmbRecordcategory.getSelectionModel().getSelectedItem(),
+                            txtIncidentLocation.getText(),
+                            Date.valueOf(dateIncidentDate.getValue()),
+                            Time.valueOf(timeIncidentTime.getValue()),
+                            txtVictimName.getText(),
+                            txtRecordDescription.getText()
+                    ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (result){
+            Notification.createSuccesful("Record Updated","Crime Record update Successfully");
+
+            getAllRecords();
+            clearFields();
+        }else {
+            Notification.createError("Failed","Crime Record Cannot be update");
+        }
 
     }
 
     @FXML
     void cmbRecordcategoryOnAction(ActionEvent event) {
+        txtIncidentLocation.requestFocus();
 
     }
 
     @FXML
     void dateIncidentDateOnAction(ActionEvent event) {
+        timeIncidentTime.requestFocus();
+
 
     }
 
     @FXML
     void timeIncidentTimeOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void txtInvestigatingOfficerOnAcion(ActionEvent event) {
+        txtVictimName.requestFocus();
 
     }
 
     @FXML
     void txtLocationOnAction(ActionEvent event) {
+        dateIncidentDate.requestFocus();
 
     }
 
     @FXML
     void txtRecordIDOnAction(ActionEvent event) {
+        txtRecordName.requestFocus();
 
     }
 
     @FXML
     void txtRecordNameOnAction(ActionEvent event) {
+        cmbRecordcategory.requestFocus();
 
     }
 
     @FXML
     void txtVictimNameOnAction(ActionEvent event) {
+        txtRecordDescription.requestFocus();
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    setCrimeCategory();
+        try {
+            recordService= ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Platform.runLater(() -> txtRecordID.requestFocus());
+
+        setCrimeCategory();
+        tblRecords.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("recordID"));
+        tblRecords.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("recordCategory"));
+        tblRecords.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("recordName"));
+        tblRecords.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("incidentDate"));
+        tblRecords.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("victimsName"));
+        getAllRecords();
 
     }
-    private void setCrimeCategory(){
+    void setCrimeCategory(){
         ObservableList<String> list = FXCollections.observableArrayList("Homicide","Rape or Abuse","Child Abuse","Kidnapping","Assault","Battery","Robbery","Terrorism","Drug Dealing");
         cmbRecordcategory.setItems(list);
+
     }
+
+    private void clearFields(){
+        cmbRecordcategory.setValue(null);
+        txtRecordID.clear();
+        txtRecordName.clear();
+        txtIncidentLocation.clear();
+        txtRecordDescription.clear();
+        txtVictimName.clear();
+        dateIncidentDate.setValue(null);
+        timeIncidentTime.setValue(null);
+    }
+
+    @FXML
+    void tblRecordsOnMouseClicked(MouseEvent event) {
+        if (tblRecords.getSelectionModel().getSelectedIndex()!=-1){
+            RecordDTO selectedItem = tblRecords.getSelectionModel().getSelectedItem();
+            txtRecordID.setText(String.valueOf(selectedItem.getRecordID()));
+            txtRecordName.setText(selectedItem.getRecordName());
+            cmbRecordcategory.setValue(selectedItem.getRecordCategory());
+            txtIncidentLocation.setText(selectedItem.getIncidentLocation());
+            dateIncidentDate.setValue(fromDate(selectedItem.getIncidentDate()));
+            timeIncidentTime.setValue(fromTime(selectedItem.getIncidentTIme()));
+            txtVictimName.setText(selectedItem.getVictimsName());
+            txtRecordDescription.setText(selectedItem.getRecordDec());
+
+        }
+
+    }
+    private LocalDate fromDate(java.util.Date date) {
+        Instant instant = Instant.ofEpochMilli(date.getTime());
+        return LocalDateTime.ofInstant(instant, ZoneId.systemDefault())
+                .toLocalDate();
+    }
+    private LocalTime fromTime(java.util.Date date) {
+        Instant instant = Instant.ofEpochMilli(date.getTime());
+        return LocalDateTime.ofInstant(instant, ZoneId.systemDefault())
+                .toLocalTime();
+    }
+
+    private void getAllRecords(){
+        List<RecordDTO> recordDTOS = null;
+        try {
+            recordDTOS = recordService.getAllRecords();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tblRecords.setItems(FXCollections.observableArrayList(recordDTOS));
+    }
+
 }

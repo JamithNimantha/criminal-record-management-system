@@ -1,5 +1,6 @@
 package lk.ijse.gdse.common.dto;
 
+
 import java.util.Date;
 
 public class RecordDTO implements SuperDTO{
@@ -9,7 +10,7 @@ public class RecordDTO implements SuperDTO{
     private String incidentLocation;
     private Date incidentDate;
     private Date incidentTIme;
-    private String VictimsName;
+    private String victimsName;
     private String recordDec;
 
     public RecordDTO() {
@@ -22,7 +23,7 @@ public class RecordDTO implements SuperDTO{
         this.incidentLocation = incidentLocation;
         this.incidentDate = incidentDate;
         this.incidentTIme = incidentTIme;
-        VictimsName = victimsName;
+        this.victimsName = victimsName;
         this.recordDec = recordDec;
     }
 
@@ -75,11 +76,11 @@ public class RecordDTO implements SuperDTO{
     }
 
     public String getVictimsName() {
-        return VictimsName;
+        return victimsName;
     }
 
     public void setVictimsName(String victimsName) {
-        VictimsName = victimsName;
+        this.victimsName = victimsName;
     }
 
     public String getRecordDec() {
@@ -99,7 +100,7 @@ public class RecordDTO implements SuperDTO{
                 ", incidentLocation='" + incidentLocation + '\'' +
                 ", incidentDate=" + incidentDate +
                 ", incidentTIme=" + incidentTIme +
-                ", VictimsName='" + VictimsName + '\'' +
+                ", victimsName='" + victimsName + '\'' +
                 ", recordDec='" + recordDec + '\'' +
                 '}';
     }

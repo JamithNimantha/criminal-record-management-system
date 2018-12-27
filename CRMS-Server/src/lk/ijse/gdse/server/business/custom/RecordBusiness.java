@@ -9,6 +9,6 @@ public interface RecordBusiness extends SuperBusiness {
     public boolean addRecord(RecordDTO recordDTO) throws Exception;
     public boolean updateRecord(RecordDTO recordDTO) throws  Exception;
     public boolean deleteRecord(RecordDTO recordDTO) throws Exception;
-    public RecordDTO searchRecord(String id) throws  Exception;
+    public RecordDTO searchRecord(int id) throws  Exception;
     public List<RecordDTO> getAllRecords() throws Exception;
 }
