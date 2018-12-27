@@ -21,81 +21,89 @@ public class UserBusinessImpl implements UserBusiness {
 
     @Override
     public boolean addUser(UserDTO userDTO) throws Exception {
-        Session openSession = HibUtil.getSessionFactory().openSession();
-        userRepo.setSession(openSession);
-        openSession.getTransaction().begin();
-        boolean response=userRepo.add(
-                new User(
-                        userDTO.getID(),
-                        userDTO.getName(),
-                        userDTO.getPosition(),
-                        userDTO.getPermissionLevel(),
-                        userDTO.getDepartment(),
-                        userDTO.getAddress(),
-                        userDTO.getEmail(),
-                        userDTO.getTelphone(),
-                        userDTO.getPassword(),
-                        BlobProxy.generateProxy(userDTO.getPhoto())
-                        ));
-        openSession.getTransaction().commit();
-        openSession.close();
+        boolean response;
+        try (Session openSession = HibUtil.getSessionFactory().openSession()) {
+            userRepo.setSession(openSession);
+            openSession.getTransaction().begin();
+            response = userRepo.add(
+                    new User(
+                            userDTO.getID(),
+                            userDTO.getName(),
+                            userDTO.getPosition(),
+                            userDTO.getPermissionLevel(),
+                            userDTO.getDepartment(),
+                            userDTO.getAddress(),
+                            userDTO.getEmail(),
+                            userDTO.getTelphone(),
+                            userDTO.getPassword(),
+                            BlobProxy.generateProxy(userDTO.getPhoto())
+                    ));
+            openSession.getTransaction().commit();
+           // openSession.close();
+        }
         return response;
     }
 
     @Override
     public boolean updateUser(UserDTO userDTO) throws Exception {
-        Session opSession = HibUtil.getSessionFactory().openSession();
-        userRepo.setSession(opSession);
-        opSession.getTransaction().begin();
-        boolean response=userRepo.update(
-                new User(
-                        userDTO.getID(),
-                        userDTO.getName(),
-                        userDTO.getPosition(),
-                        userDTO.getPermissionLevel(),
-                        userDTO.getDepartment(),
-                        userDTO.getAddress(),
-                        userDTO.getEmail(),
-                        userDTO.getTelphone(),
-                        userDTO.getPassword(),
-                        BlobProxy.generateProxy(userDTO.getPhoto())
-                ));
-        opSession.getTransaction().commit();
-        opSession.close();
+        boolean response;
+        try (Session opSession = HibUtil.getSessionFactory().openSession()) {
+            userRepo.setSession(opSession);
+            opSession.getTransaction().begin();
+            response = userRepo.update(
+                    new User(
+                            userDTO.getID(),
+                            userDTO.getName(),
+                            userDTO.getPosition(),
+                            userDTO.getPermissionLevel(),
+                            userDTO.getDepartment(),
+                            userDTO.getAddress(),
+                            userDTO.getEmail(),
+                            userDTO.getTelphone(),
+                            userDTO.getPassword(),
+                            BlobProxy.generateProxy(userDTO.getPhoto())
+                    ));
+            opSession.getTransaction().commit();
+           // opSession.close();
+        }
         return response;
     }
 
     @Override
     public boolean deleteUser(UserDTO userDTO) throws Exception {
-        Session opSession = HibUtil.getSessionFactory().openSession();
-        userRepo.setSession(opSession);
-        opSession.getTransaction().begin();
-        boolean response=userRepo.delete(
-                new User(
-                        userDTO.getID(),
-                        userDTO.getName(),
-                        userDTO.getPosition(),
-                        userDTO.getPermissionLevel(),
-                        userDTO.getDepartment(),
-                        userDTO.getAddress(),
-                        userDTO.getEmail(),
-                        userDTO.getTelphone(),
-                        userDTO.getPassword(),
-                        BlobProxy.generateProxy(userDTO.getPhoto())
-                ));
-        opSession.getTransaction().commit();
-        opSession.close();
+        boolean response;
+        try (Session opSession = HibUtil.getSessionFactory().openSession()) {
+            userRepo.setSession(opSession);
+            opSession.getTransaction().begin();
+            response = userRepo.delete(
+                    new User(
+                            userDTO.getID(),
+                            userDTO.getName(),
+                            userDTO.getPosition(),
+                            userDTO.getPermissionLevel(),
+                            userDTO.getDepartment(),
+                            userDTO.getAddress(),
+                            userDTO.getEmail(),
+                            userDTO.getTelphone(),
+                            userDTO.getPassword(),
+                            BlobProxy.generateProxy(userDTO.getPhoto())
+                    ));
+            opSession.getTransaction().commit();
+           // opSession.close();
+        }
         return response;
     }
 
     @Override
     public UserDTO searchUser(String id) throws Exception {
-        Session opSession = HibUtil.getSessionFactory().openSession();
-        userRepo.setSession(opSession);
-        opSession.getTransaction().begin();
-        User user = userRepo.search(id);
-        opSession.getTransaction().commit();
-        opSession.close();
+        User user;
+        try (Session opSession = HibUtil.getSessionFactory().openSession()) {
+            userRepo.setSession(opSession);
+            opSession.getTransaction().begin();
+            user = userRepo.search(id);
+            opSession.getTransaction().commit();
+           // opSession.close();
+        }
         return new UserDTO(
                 user.getId(),
                 user.getName(),
@@ -113,28 +121,31 @@ public class UserBusinessImpl implements UserBusiness {
 
     @Override
     public List<UserDTO> getAllUsers() throws Exception {
-        Session openSession = HibUtil.getSessionFactory().openSession();
-        userRepo.setSession(openSession);
-        openSession.getTransaction().begin();
-        List<UserDTO> userDTOS= new ArrayList<>();
-        List<User> all = userRepo.getAll();
-        for (User user: all) {
-            userDTOS.add(
-                    new UserDTO(
-                            user.getId(),
-                            user.getName(),
-                            user.getPosition(),
-                            user.getPermission_level(),
-                            user.getDepartment(),
-                            user.getAddress(),
-                            user.getEmail(),
-                            user.getTelphone(),
-                            user.getPassword(),
-                            user.getPhoto().getBytes(1,(int)user.getPhoto().length())
-                            //IOUtils.
-                            //BlobProxy.generateProxy(user.getPhoto())
+        List<UserDTO> userDTOS;
+        try (Session openSession = HibUtil.getSessionFactory().openSession()) {
+            userRepo.setSession(openSession);
+            openSession.getTransaction().begin();
+            userDTOS = new ArrayList<>();
+            List<User> all = userRepo.getAll();
+            for (User user : all) {
+                userDTOS.add(
+                        new UserDTO(
+                                user.getId(),
+                                user.getName(),
+                                user.getPosition(),
+                                user.getPermission_level(),
+                                user.getDepartment(),
+                                user.getAddress(),
+                                user.getEmail(),
+                                user.getTelphone(),
+                                user.getPassword(),
+                                user.getPhoto().getBytes(1, (int) user.getPhoto().length())
+                                //IOUtils.
+                                //BlobProxy.generateProxy(user.getPhoto())
 
-                    ));
+                        ));
+            }
+            openSession.getTransaction().commit();
         }
         return userDTOS;
     }

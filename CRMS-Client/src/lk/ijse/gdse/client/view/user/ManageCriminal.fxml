@@ -53,7 +53,7 @@
          </image>
       </ImageView>
       <JFXDatePicker fx:id="datBirth" layoutX="442.0" layoutY="153.0" onAction="#datBirthOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Birthday" style="-fx-font-weight: bold;" />
-      <JFXTextField fx:id="txtAge" alignment="TOP_LEFT" editable="false" labelFloat="true" layoutX="655.0" layoutY="154.0" prefHeight="26.0" prefWidth="146.0" promptText="Age">
+      <JFXTextField fx:id="txtAge" alignment="TOP_LEFT" labelFloat="true" layoutX="655.0" layoutY="154.0" prefHeight="26.0" prefWidth="146.0" promptText="Age">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

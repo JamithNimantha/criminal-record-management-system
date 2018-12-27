@@ -116,7 +116,7 @@ public class DashboardController {
     void btnUserOnAction(ActionEvent event) {
         Node node = null;
         try {
-            node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/admin/ManageUser.fxml"));
+            node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/user/Officer.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

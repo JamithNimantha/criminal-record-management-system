@@ -11,9 +11,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableView;
+import lk.ijse.gdse.client.proxy.ProxyHandler;
+import lk.ijse.gdse.common.dto.RecordDTO;
+import lk.ijse.gdse.common.service.ServiceFactory;
+import lk.ijse.gdse.common.service.custom.RecordService;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ManageRecordsController implements Initializable {
@@ -59,6 +66,15 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     private JFXTextField txtInvestigatingOfficer;
+    private static RecordService recordService;
+    static {
+        try {
+            recordService= ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
@@ -66,7 +82,28 @@ public class ManageRecordsController implements Initializable {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws Exception {
+
+        RecordDTO recordDTO=new RecordDTO(
+                Integer.parseInt(txtRecordID.getText()),
+                txtRecordName.getText(),
+                cmbRecordcategory.getSelectionModel().getSelectedItem(),
+                txtIncidentLocation.getText(),
+                new Date(),
+                new Date(),
+                txtVictimName.getText(),
+                txtRecordDescription.getText()
+        );
+        boolean result = recordService.addRecord(recordDTO);
+        if (result){
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION,"FUCK", ButtonType.OK);
+            alert.show();
+        }else{
+            Alert alert=new Alert(Alert.AlertType.ERROR,"Buddhika Ponnaya", ButtonType.OK);
+            alert.show();
+
+        }
+
 
     }
 
@@ -126,7 +163,7 @@ public class ManageRecordsController implements Initializable {
 
     }
     private void setCrimeCategory(){
-        ObservableList<String> list = FXCollections.observableArrayList("Homicide","Rape or Abuse","Child Abuse","Kidnapping","Assault","Battery","Robbery","Terrorism");
+        ObservableList<String> list = FXCollections.observableArrayList("Homicide","Rape or Abuse","Child Abuse","Kidnapping","Assault","Battery","Robbery","Terrorism","Drug Dealing");
         cmbRecordcategory.setItems(list);
     }
 }

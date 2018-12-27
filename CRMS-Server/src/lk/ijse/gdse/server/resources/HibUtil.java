@@ -1,5 +1,8 @@
 package lk.ijse.gdse.server.resources;
 
+import lk.ijse.gdse.server.entity.Criminal;
+import lk.ijse.gdse.server.entity.CriminalRecordDetails;
+import lk.ijse.gdse.server.entity.Record;
 import lk.ijse.gdse.server.entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -16,6 +19,9 @@ public class HibUtil {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder().loadProperties("Hibernate.properties").build();
         Metadata metadata = new MetadataSources(registry)
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Criminal.class)
+                .addAnnotatedClass(CriminalRecordDetails.class)
+                .addAnnotatedClass(Record.class)
                 .buildMetadata();
         return metadata.getSessionFactoryBuilder().build();
     }

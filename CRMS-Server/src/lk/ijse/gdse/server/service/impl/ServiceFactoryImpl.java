@@ -1,6 +1,8 @@
 package lk.ijse.gdse.server.service.impl;
 
 import lk.ijse.gdse.common.service.ServiceFactory;
+import lk.ijse.gdse.server.service.custom.impl.CriminalServiceImpl;
+import lk.ijse.gdse.server.service.custom.impl.RecordServiceIMpl;
 import lk.ijse.gdse.server.service.custom.impl.UserServiceImpl;
 
 import java.rmi.RemoteException;
@@ -26,6 +28,10 @@ public class ServiceFactoryImpl extends UnicastRemoteObject implements ServiceFa
         switch (serviceTypes){
             case USER:
                 return (T) new UserServiceImpl();
+            case RECORD:
+                return (T) new RecordServiceIMpl();
+            case CRIMINAL:
+                return (T) new CriminalServiceImpl();
                 default:
                     return null;
         }

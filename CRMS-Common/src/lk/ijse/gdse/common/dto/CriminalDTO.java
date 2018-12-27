@@ -1,17 +1,9 @@
-package lk.ijse.gdse.server.entity;
+package lk.ijse.gdse.common.dto;
 
-
-import javax.persistence.*;
 import java.sql.Blob;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-@Entity
-@Table(name = "Criminal")
-public class Criminal {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CriminalDTO implements SuperDTO{
     private int criminalId;
     private String criminalName;
     private String criminalNickName;
@@ -31,33 +23,14 @@ public class Criminal {
     private String complexion;
     private String hair;
     private String eyes;
-    private Blob photo;
+    //private Blob photo;
 
-    @OneToMany(mappedBy = "criminal")
-    private List<CriminalRecordDetails> criminalRecordDetails=new ArrayList<>();
 
-    public Criminal(String criminalName, String criminalNickName, String criminalNIC, String criminalDOB, int age, String gender, String birthRegID, String birthPlace, String civilStatus, String occupation, String address, String ethnicity, String poloticalView, String religion, double height, String complexion, String hair, String eyes) {
-        this.criminalName = criminalName;
-        this.criminalNickName = criminalNickName;
-        this.criminalNIC = criminalNIC;
-        this.criminalDOB = criminalDOB;
-        this.age = age;
-        this.gender = gender;
-        this.birthRegID = birthRegID;
-        this.birthPlace = birthPlace;
-        this.civilStatus = civilStatus;
-        this.occupation = occupation;
-        this.address = address;
-        this.ethnicity = ethnicity;
-        this.poloticalView = poloticalView;
-        this.religion = religion;
-        this.height = height;
-        this.complexion = complexion;
-        this.hair = hair;
-        this.eyes = eyes;
+    public CriminalDTO() {
     }
 
-    public Criminal(String criminalName, String criminalNickName, String criminalNIC, String criminalDOB, int age, String gender, String birthRegID, String birthPlace, String civilStatus, String occupation, String address, String ethnicity, String poloticalView, String religion, double height, String complexion, String hair, String eyes, List<CriminalRecordDetails> criminalRecordDetails) {
+    public CriminalDTO(int criminalId, String criminalName, String criminalNickName, String criminalNIC, String criminalDOB, int age, String gender, String birthRegID, String birthPlace, String civilStatus, String occupation, String address, String ethnicity, String poloticalView, String religion, double height, String complexion, String hair, String eyes) {
+        this.criminalId = criminalId;
         this.criminalName = criminalName;
         this.criminalNickName = criminalNickName;
         this.criminalNIC = criminalNIC;
@@ -76,7 +49,6 @@ public class Criminal {
         this.complexion = complexion;
         this.hair = hair;
         this.eyes = eyes;
-        this.criminalRecordDetails = criminalRecordDetails;
     }
 
     public int getCriminalId() {
@@ -112,6 +84,7 @@ public class Criminal {
     }
 
     public String getCriminalDOB() {
+
         return criminalDOB;
     }
 
@@ -231,11 +204,5 @@ public class Criminal {
         this.eyes = eyes;
     }
 
-    public List<CriminalRecordDetails> getCriminalRecordDetails() {
-        return criminalRecordDetails;
-    }
 
-    public void setCriminalRecordDetails(List<CriminalRecordDetails> criminalRecordDetails) {
-        this.criminalRecordDetails = criminalRecordDetails;
-    }
 }

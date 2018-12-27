@@ -1,6 +1,7 @@
 package lk.ijse.gdse.client.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,10 @@ import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.UserService;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,7 +44,11 @@ public class LoginController implements Initializable {
 
     @FXML
     void btnLoginInOnAction(ActionEvent event){
-        checkLogin();
+        try {
+            checkLogin();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -51,37 +60,50 @@ public class LoginController implements Initializable {
 
     @FXML
     void txtPassOnAction(ActionEvent event) {
-        checkLogin();
+        try {
+            checkLogin();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void checkLogin(){
+    private void checkLogin() throws IOException {
         /*
         ********************************
         One time ID and Pass Generation
         ********************************
          */
 
-        /*
-        try {
-            boolean b = userService.addUser(
-                    new UserDTO(
-                            txtID.getText(),
-                            null,
-                            null,
-                            "Administrator",
-                            null,
-                            null,
-                            null,
-                            null,
-                            txtPass.getText(),
-                            null
-                    ));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        /* */
 
-        */
+//        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgLogo.getImage(),null);
+//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//        ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);
+//        byte [] bytes = byteArrayOutputStream.toByteArray();
+//        byteArrayOutputStream.close();
+//        try {
+//            boolean b = userService.addUser(
+//                    new UserDTO(
+//                            "admin",
+//                            null,
+//                            null,
+//                            "Administrator",
+//                            null,
+//                            null,
+//                            null,
+//                            null,
+//                            "admin",
+//                            bytes
+//                    ));
+//            if (b){
+//                System.out.println("User Added");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+
 
 
         try {
@@ -112,7 +134,7 @@ public class LoginController implements Initializable {
 
         } catch (Exception e) {
             Notification.createError("Invalid UserID","Please Enter Valid UserID");
-            //e.printStackTrace();
+            e.printStackTrace();
             clearText();
             txtID.requestFocus();
         }

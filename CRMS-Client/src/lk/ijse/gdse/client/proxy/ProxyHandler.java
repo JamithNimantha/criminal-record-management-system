@@ -1,6 +1,8 @@
 package lk.ijse.gdse.client.proxy;
 
 import lk.ijse.gdse.common.service.ServiceFactory;
+import lk.ijse.gdse.common.service.custom.CriminalService;
+import lk.ijse.gdse.common.service.custom.RecordService;
 import lk.ijse.gdse.common.service.custom.UserService;
 
 import java.net.MalformedURLException;
@@ -12,6 +14,8 @@ public class ProxyHandler implements ServiceFactory {
 
     private static ProxyHandler proxyHandler;
     private UserService userService;
+    private RecordService recordService;
+    private CriminalService criminalService;
 
 
     public static ProxyHandler getInstance(){
@@ -25,6 +29,8 @@ public class ProxyHandler implements ServiceFactory {
         try {
             ServiceFactory serviceFactory = (ServiceFactory) Naming.lookup("rmi://127.0.0.1:5050/CRMS");
             userService = serviceFactory.getSuperService(ServiceTypes.USER);
+            recordService=serviceFactory.getSuperService(ServiceTypes.RECORD);
+            criminalService=serviceFactory.getSuperService(ServiceTypes.CRIMINAL);
         } catch (NotBoundException | MalformedURLException e) {
             e.printStackTrace();
         } catch (RemoteException e) {
@@ -39,6 +45,10 @@ public class ProxyHandler implements ServiceFactory {
         switch (serviceTypes){
             case USER:
                 return (T) userService;
+            case RECORD:
+                return (T) recordService;
+            case CRIMINAL:
+                return (T) criminalService;
                 default:
                     return null;
         }

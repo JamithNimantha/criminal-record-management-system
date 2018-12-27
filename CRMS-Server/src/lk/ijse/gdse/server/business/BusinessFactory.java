@@ -1,5 +1,7 @@
 package lk.ijse.gdse.server.business;
 
+import lk.ijse.gdse.server.business.custom.impl.CriminalBusinessImpl;
+import lk.ijse.gdse.server.business.custom.impl.RecordBusinessImpl;
 import lk.ijse.gdse.server.business.custom.impl.UserBusinessImpl;
 
 public class BusinessFactory {
@@ -13,12 +15,16 @@ public class BusinessFactory {
     }
 
     public enum BusinessTypes{
-        USER;
+        USER,RECORD,CRIMINAL,CRIMINALRECORDDETAIL;
     }
     public <T> T getBussinessFor(BusinessTypes types){
         switch (types){
             case USER:
                 return (T) new UserBusinessImpl();
+            case RECORD:
+                return (T) new RecordBusinessImpl();
+            case CRIMINAL:
+                return (T) new CriminalBusinessImpl();
                 default:
                     return null;
         }
