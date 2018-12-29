@@ -58,7 +58,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtBirthPlace" labelFloat="true" layoutX="673.0" layoutY="194.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="233.0" promptText="Birthplace">
+      <JFXTextField fx:id="txtBirthPlace" labelFloat="true" layoutX="673.0" layoutY="194.0" onAction="#txtBirthplaceOnAction" prefHeight="26.0" prefWidth="233.0" promptText="Birthplace">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -145,6 +145,6 @@
             <TableColumn prefWidth="107.0" text="Record ID" />
         </columns>
       </TableView>
-      <JFXComboBox fx:id="cmbCivilStatus" labelFloat="true" layoutX="443.0" layoutY="237.0" prefHeight="26.0" prefWidth="211.0" promptText="Civil Status" style="-fx-font-weight: bold;" />
+      <JFXComboBox fx:id="cmbCivilStatus" labelFloat="true" layoutX="443.0" layoutY="237.0" onAction="#cmbCivilStatusOnAction" prefHeight="26.0" prefWidth="211.0" promptText="Civil Status" style="-fx-font-weight: bold;" />
    </children>
 </AnchorPane>

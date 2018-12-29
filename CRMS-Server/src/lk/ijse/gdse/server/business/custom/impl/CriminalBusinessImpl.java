@@ -198,7 +198,8 @@ public class CriminalBusinessImpl implements CriminalBusiness {
                         criminal.getComplexion(),
                         criminal.getHair(),
                         criminal.getEyes(),
-                        criminal.getPhoto().getBytes(1, (int) criminal.getPhoto().length())
+                        null
+                        //criminal.getPhoto().getBytes(1, (int) criminal.getPhoto().length())
 //
                 );
 

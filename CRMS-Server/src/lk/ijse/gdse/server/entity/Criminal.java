@@ -34,7 +34,7 @@ public class Criminal {
     private String eyes;
     private Blob photo;
 
-    @OneToMany(mappedBy = "criminal")
+    @OneToMany(mappedBy = "criminal",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<CriminalRecordDetails> criminalRecordDetails=new ArrayList<>();
 
     public Criminal() {

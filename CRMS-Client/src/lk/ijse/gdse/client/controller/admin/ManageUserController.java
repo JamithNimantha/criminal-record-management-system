@@ -361,13 +361,12 @@ public class ManageUserController implements Initializable {
 
     }
     private void getAllUsers(){
-        List<UserDTO> allUsers = null;
         try {
-            allUsers = userService.getAllUsers();
+            List<UserDTO> allUsers = userService.getAllUsers();
+            tblUser.setItems(FXCollections.observableArrayList(allUsers));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        tblUser.setItems(FXCollections.observableArrayList(allUsers));
 
     }
     private void clearfields(){

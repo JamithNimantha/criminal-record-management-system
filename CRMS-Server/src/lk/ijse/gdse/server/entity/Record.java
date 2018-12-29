@@ -19,7 +19,7 @@ public class Record {
     private Date incidentTIme;
     private String victimsName;
     private String recordDec;
-    @OneToMany(mappedBy = "record")
+    @OneToMany(mappedBy = "record",cascade = {CascadeType.REMOVE,CascadeType.PERSIST})
     private List<CriminalRecordDetails> criminalRecordDetails=new ArrayList<>();
 
     public Record() {

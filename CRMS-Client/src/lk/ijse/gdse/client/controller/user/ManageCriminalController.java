@@ -26,10 +26,8 @@ import lk.ijse.gdse.common.dto.CriminalDTO;
 import lk.ijse.gdse.common.dto.CriminalDetailDTO;
 import lk.ijse.gdse.common.dto.CustomDTO;
 import lk.ijse.gdse.common.dto.RecordDTO;
-import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.CriminalService;
 import lk.ijse.gdse.common.service.custom.RecordService;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -165,6 +163,8 @@ public class ManageCriminalController implements Initializable {
             boolean result = criminalService.deleteCriminal(criminalDTO, txtRecordID.getText());
             if (result){
                 Notification.createSuccesful("Successfull","Criminal removed Successfully");
+                getAllCriminals();
+                clearFields();
             }else{
                 Notification.createError("Failed","Criminal Cannot be removed");
             }
@@ -207,6 +207,8 @@ public class ManageCriminalController implements Initializable {
             boolean result = criminalService.addCriminal(criminalDTO, txtRecordID.getText());
             if (result){
                 Notification.createSuccesful("Successfull","Criminal Added Successfully");
+                getAllCriminals();
+                clearFields();
             }else{
                 Notification.createError("Failed","Criminal Cannot be Added");
             }
@@ -253,6 +255,8 @@ public class ManageCriminalController implements Initializable {
             boolean result = criminalService.updateCriminal(criminalDTO, txtRecordID.getText());
             if (result){
                 Notification.createSuccesful("Successfull","Criminal updated Successfully");
+                getAllCriminals();
+                clearFields();
             }else{
                 Notification.createError("Failed","Criminal Cannot be updated");
             }
@@ -319,6 +323,7 @@ public class ManageCriminalController implements Initializable {
     }
     @FXML
     void cmbCivilStatusOnAction(ActionEvent event) {
+
         txtOccupation.requestFocus();
     }
 
@@ -398,20 +403,11 @@ public class ManageCriminalController implements Initializable {
             txtHair.setText(dto.getHair());
             txtEyes.setText(dto.getEyes());
             txtRecordID.setText(dto.getRecordID());
-            imgPhoto.setImage(new Image(new ByteArrayInputStream(dto.getPhoto())));
-            imgPhoto.setFitHeight(226);
-            imgPhoto.setFitWidth(365);
-            imgPhoto.setPreserveRatio(true);
-            imgPhoto.setSmooth(true);
-           // txtNickName.setText(dto.getCr);
-//            txtRecordName.setText(selectedItem.getRecordName());
-//            cmbRecordcategory.setValue(selectedItem.getRecordCategory());
-//            txtIncidentLocation.setText(selectedItem.getIncidentLocation());
-//            dateIncidentDate.setValue(DateConverter.fromDate(selectedItem.getIncidentDate()));
-//            timeIncidentTime.setValue(DateConverter.fromTime(selectedItem.getIncidentTIme()));
-//            txtVictimName.setText(selectedItem.getVictimsName());
-//            txtRecordDescription.setText(selectedItem.getRecordDec());
-
+//            imgPhoto.setImage(new Image(new ByteArrayInputStream(dto.getPhoto())));
+//            imgPhoto.setFitHeight(226);
+//            imgPhoto.setFitWidth(365);
+//            imgPhoto.setPreserveRatio(true);
+//            imgPhoto.setSmooth(true);
         }
     }
 
@@ -502,6 +498,7 @@ public class ManageCriminalController implements Initializable {
     }
     private void getAllCriminals(){
         try {
+            tblCriminal.getItems().clear();
             List<CriminalDetailDTO> allCriminals = criminalService.getAllCriminals();
             for (CriminalDetailDTO criminalDetailDTO: allCriminals){
                 CustomDTO customDTO=new CustomDTO(

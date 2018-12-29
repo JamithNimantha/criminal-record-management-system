@@ -77,7 +77,7 @@ public class ManageRecordsController implements Initializable {
     void btnRemoveOnAction(ActionEvent event) {
         boolean result = false;
         try {
-            result = recordService.addRecord(
+            result = recordService.deleteRecord(
                     new RecordDTO(
                             txtRecordID.getText(),
                             txtRecordName.getText(),
@@ -237,7 +237,7 @@ public class ManageRecordsController implements Initializable {
         tblRecords.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("recordName"));
         tblRecords.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("incidentDate"));
         tblRecords.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("victimsName"));
-//        getAllRecords();
+        getAllRecords();
 
     }
     void setCrimeCategory(){
@@ -276,13 +276,12 @@ public class ManageRecordsController implements Initializable {
     }
 
     private void getAllRecords(){
-        List<RecordDTO> recordDTOS = null;
         try {
-//            recordDTOS = recordService.getAllRecords();
+            List<RecordDTO> recordDTOS = recordService.getAllRecords();
+            tblRecords.setItems(FXCollections.observableArrayList(recordDTOS));
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        tblRecords.setItems(FXCollections.observableArrayList(recordDTOS));
     }
 
 }
