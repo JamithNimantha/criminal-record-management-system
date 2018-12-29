@@ -111,6 +111,15 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnReportsOnAction(ActionEvent event) {
+        try {
+            Node node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/Reports.fxml"));
+            if (!pnlMain.getChildren().isEmpty()){
+                pnlMain.getChildren().remove(0);
+            }
+            pnlMain.getChildren().add(node);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

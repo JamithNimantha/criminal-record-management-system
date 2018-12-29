@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="706.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.ReportsController">
+   <children>
+      <JFXButton fx:id="btnRecord" layoutX="277.0" layoutY="73.0" onAction="#btnRecord" prefHeight="71.0" prefWidth="364.0" styleClass="button-search" stylesheets="@../css/style.css" text="Crime Records" />
+      <JFXButton fx:id="btnCrime" layoutX="280.0" layoutY="174.0" onAction="#btnCrime" prefHeight="71.0" prefWidth="364.0" styleClass="button-search" stylesheets="@../css/style.css" text="Criminals" />
+      <JFXButton fx:id="btnDetails" layoutX="280.0" layoutY="279.0" onAction="#btnDetails" prefHeight="71.0" prefWidth="364.0" styleClass="button-search" stylesheets="@../css/style.css" text="Criminals Records Details" />
+   </children>
+</AnchorPane>

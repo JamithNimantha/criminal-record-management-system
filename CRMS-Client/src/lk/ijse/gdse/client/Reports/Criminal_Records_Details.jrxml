@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Criminal_Records_Details" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CRMS_Data_Adapter"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT C2.criminalId,C2.criminalName,C2.criminalNickName,R.recordName, R.recordCategory,R.victimsName,R.incidentDate FROM CriminalRecordDetails CD INNER JOIN Criminal C2 on CD.criminal_criminalId = C2.criminalId INNER JOIN Record R on CD.record_recordID = R.recordID;]]>
+	</queryString>
+	<field name="criminalId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="criminalId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Criminal"/>
+	</field>
+	<field name="criminalName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="criminalName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Criminal"/>
+	</field>
+	<field name="criminalNickName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="criminalNickName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Criminal"/>
+	</field>
+	<field name="recordName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="recordName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Record"/>
+	</field>
+	<field name="recordCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="recordCategory"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Record"/>
+	</field>
+	<field name="victimsName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="victimsName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Record"/>
+	</field>
+	<field name="incidentDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="incidentDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Record"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{incidentDate}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="802" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="f24569ed-2518-465a-a480-0c195aacd180"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" x="2" y="0" width="695" height="24" forecolor="#FFFFFF" uuid="5b7282d2-5169-4db4-b85a-e2391d4d4e66"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{incidentDate}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="810" height="66" backcolor="#000000" uuid="d8d9e644-3a32-491d-97cb-a277aff17133"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="630" height="66" uuid="27d8f6ee-f0a9-44f6-a160-1763c3b00f30"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Criminal Record Details]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="70" width="810" height="32" forecolor="#000000" backcolor="#CC0000" uuid="b0c895f6-6dbd-477d-9858-9ad66af087e1"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="654" y="10" width="144" height="20" forecolor="#FFFFFF" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="132" height="18" forecolor="#000000" uuid="675cd390-02ae-47e8-9784-07fe07b394e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23c590fa-34fd-47db-9e6d-b2912079cf59"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Criminal ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="132" y="0" width="132" height="18" forecolor="#000000" uuid="28e3fee6-59ca-44f0-875b-4bc90eefb9ea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f677972-53d2-403a-a318-fd1ae03ed02e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Criminal Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="264" y="0" width="132" height="18" forecolor="#000000" uuid="0c6a0e34-410d-4ef8-84d4-25dd1d866acc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3410ef90-dd25-4e8a-982f-901b1c1fc23e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nick Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="132" height="18" forecolor="#000000" uuid="40ef5937-a806-4c51-af5f-05dc97bf74e5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6067e59-6871-4daa-a90f-6272f838192a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Record Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="528" y="0" width="132" height="18" forecolor="#000000" uuid="791cbb27-0f7c-4c10-bb64-35769a1d9167">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="85be387e-6285-4f8d-910a-91dd3c969726"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Record Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="660" y="0" width="132" height="18" forecolor="#000000" uuid="7c0d0da7-4c49-44f0-8956-68077d6bfcec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf377859-23f6-467e-adf4-d803c1917e23"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Victims Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="34a2ae4b-4055-476b-8676-d499f6af510b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="132" height="18" uuid="72bfd774-6e55-4d35-8b9f-0b3da48e16db">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23c590fa-34fd-47db-9e6d-b2912079cf59"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{criminalId}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="132" y="0" width="132" height="18" uuid="10e5c819-dbd4-400a-b5e1-6c9956aba3c0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f677972-53d2-403a-a318-fd1ae03ed02e"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{criminalName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="264" y="0" width="132" height="18" uuid="6a13aced-407a-430b-b5d9-ac3354525a57">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3410ef90-dd25-4e8a-982f-901b1c1fc23e"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{criminalNickName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="132" height="18" uuid="8929681c-a76c-4f80-b233-3e531599e505">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6067e59-6871-4daa-a90f-6272f838192a"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{recordName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="528" y="0" width="132" height="18" uuid="afeae1c4-b6aa-4582-b2fa-7e4c6e9b74a1">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="85be387e-6285-4f8d-910a-91dd3c969726"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{recordCategory}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="660" y="0" width="132" height="18" uuid="b888977d-d08c-4a9d-be6c-cf946f075c30">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf377859-23f6-467e-adf4-d803c1917e23"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{victimsName}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="501ac6c4-e9d4-43cb-ba6b-7f2f44394cf3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="ffb10ec8-0371-4545-8eaa-96d62ad3cec0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="b5521ea6-5f36-4864-856f-58d0bcd011f2"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="e625ea3c-1741-4cfe-81cf-fbbdd00162c8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="0c9f7e91-d3f5-47f9-82b7-0b2b3a43a5d6"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
