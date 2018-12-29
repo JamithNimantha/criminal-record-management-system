@@ -28,7 +28,7 @@ public class UserBusinessImpl implements UserBusiness {
             openSession.getTransaction().begin();
             response = userRepo.add(
                     new User(
-                            userDTO.getID(),
+                            IDGenerator.getNewID("User","id","CID"),
                             userDTO.getName(),
                             userDTO.getPosition(),
                             userDTO.getPermissionLevel(),

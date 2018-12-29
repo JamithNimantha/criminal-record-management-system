@@ -23,7 +23,7 @@ public class RecordBusinessImpl implements RecordBusiness {
             session.beginTransaction();
             result = recordRepo.add(
                     new Record(
-                            dto.getRecordID(),
+                            IDGenerator.getNewID("Record","recordID","RD"),
                             dto.getRecordName(),
                             dto.getRecordCategory(),
                             dto.getIncidentLocation(),

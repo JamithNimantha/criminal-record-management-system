@@ -4,6 +4,7 @@ import lk.ijse.gdse.common.dto.CriminalDTO;
 import lk.ijse.gdse.common.dto.CriminalDetailDTO;
 import lk.ijse.gdse.common.dto.RecordDTO;
 import lk.ijse.gdse.server.business.custom.CriminalBusiness;
+import lk.ijse.gdse.server.common.IDGenerator;
 import lk.ijse.gdse.server.entity.Criminal;
 import lk.ijse.gdse.server.entity.CriminalRecordDetails;
 import lk.ijse.gdse.server.entity.Record;
@@ -31,7 +32,7 @@ public class CriminalBusinessImpl implements CriminalBusiness {
             criminalRepo.setSession(session);
             Record record = session.get(Record.class, recordID);
             Criminal criminal = new Criminal(
-                    dto.getCriminalId(),
+                    IDGenerator.getNewID("Criminal","criminalId","IRC"),
                     dto.getCriminalName(),
                     dto.getCriminalNickName(),
                     dto.getCriminalNIC(),
@@ -198,8 +199,8 @@ public class CriminalBusinessImpl implements CriminalBusiness {
                         criminal.getComplexion(),
                         criminal.getHair(),
                         criminal.getEyes(),
-                        null
-                        //criminal.getPhoto().getBytes(1, (int) criminal.getPhoto().length())
+                        //null
+                        criminal.getPhoto().getBytes(1, (int) criminal.getPhoto().length())
 //
                 );
 

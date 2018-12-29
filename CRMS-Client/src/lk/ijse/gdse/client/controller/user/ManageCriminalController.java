@@ -403,11 +403,11 @@ public class ManageCriminalController implements Initializable {
             txtHair.setText(dto.getHair());
             txtEyes.setText(dto.getEyes());
             txtRecordID.setText(dto.getRecordID());
-//            imgPhoto.setImage(new Image(new ByteArrayInputStream(dto.getPhoto())));
-//            imgPhoto.setFitHeight(226);
-//            imgPhoto.setFitWidth(365);
-//            imgPhoto.setPreserveRatio(true);
-//            imgPhoto.setSmooth(true);
+            imgPhoto.setImage(new Image(new ByteArrayInputStream(dto.getPhoto())));
+            imgPhoto.setFitHeight(226);
+            imgPhoto.setFitWidth(365);
+            imgPhoto.setPreserveRatio(true);
+            imgPhoto.setSmooth(true);
         }
     }
 
