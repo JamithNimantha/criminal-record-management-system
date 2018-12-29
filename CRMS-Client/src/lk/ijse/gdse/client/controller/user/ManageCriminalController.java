@@ -21,6 +21,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lk.ijse.gdse.client.common.DateConverter;
 import lk.ijse.gdse.client.common.Notification;
+import lk.ijse.gdse.client.common.Validation;
 import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.CriminalDTO;
 import lk.ijse.gdse.common.dto.CriminalDetailDTO;
@@ -176,6 +177,18 @@ public class ManageCriminalController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+        if (txtRecordID.getText()==null){
+            txtRecordID.requestFocus();
+            txtRecordID.selectAll();
+        }
+
+        if ((txtAge.getText()==null)||!Validation.integerValueValidate(txtAge.getText()))
+            txtAge.setText("0");
+//        if (( || (txtHeight.getText()==null)){
+//            txtHeight.requestFocus();
+//            txtHeight.selectAll();
+//            Notification.createError("Invalid Number","");
+
         try {
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -213,7 +226,8 @@ public class ManageCriminalController implements Initializable {
                 Notification.createError("Failed","Criminal Cannot be Added");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Notification.createError("Empty Fields","Enter Valid Data");
+            //e.printStackTrace();
         }
     }
 
@@ -261,6 +275,7 @@ public class ManageCriminalController implements Initializable {
                 Notification.createError("Failed","Criminal Cannot be updated");
             }
         } catch (Exception e) {
+            Notification.createError("Empty Fields","Enter Valid Data");
             e.printStackTrace();
         }
     }
@@ -292,6 +307,7 @@ public class ManageCriminalController implements Initializable {
                 Notification.createError("photo not Selected","You have not selected a Photo");
             }
         } catch (MalformedURLException e) {
+
             e.printStackTrace();
         }
     }
@@ -349,7 +365,15 @@ public class ManageCriminalController implements Initializable {
 
     @FXML
     void txtHeightOnAction(ActionEvent event) {
-        txtComplexion.requestFocus();
+        if ((!Validation.integerValueValidate(txtHeight.getText())) || (txtHeight.getText()==null)){
+            txtHeight.requestFocus();
+            txtHeight.selectAll();
+            Notification.createError("Invalid Number","");
+
+        }else {
+            txtComplexion.requestFocus();
+        }
+
     }
 
     @FXML

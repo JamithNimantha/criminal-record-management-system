@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.gdse.client.common.DateConverter;
 import lk.ijse.gdse.client.common.Notification;
+import lk.ijse.gdse.client.common.Validation;
 import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.RecordDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
@@ -103,6 +104,7 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+
         boolean result = false;
         try {
             result = recordService.addRecord(
@@ -187,6 +189,8 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     void dateIncidentDateOnAction(ActionEvent event) {
+        if (dateIncidentDate.getValue()==null)
+            dateIncidentDate.requestFocus();
         timeIncidentTime.requestFocus();
 
 
@@ -194,6 +198,8 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     void timeIncidentTimeOnAction(ActionEvent event) {
+        if (timeIncidentTime.getValue()==null)
+            timeIncidentTime.requestFocus();
         txtVictimName.requestFocus();
 
     }
@@ -212,6 +218,10 @@ public class ManageRecordsController implements Initializable {
 
     @FXML
     void txtRecordNameOnAction(ActionEvent event) {
+        if (txtRecordName.getText().isEmpty() &&(!Validation.nameValidate(txtRecordName.getText())) ){
+            txtRecordName.requestFocus();
+            txtRecordName.selectAll();
+        }
         cmbRecordcategory.requestFocus();
 
     }

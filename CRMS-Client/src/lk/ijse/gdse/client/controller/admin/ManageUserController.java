@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lk.ijse.gdse.client.common.Notification;
+import lk.ijse.gdse.client.common.Validation;
 import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.common.service.ServiceFactory;
@@ -151,26 +152,37 @@ public class ManageUserController implements Initializable {
             *
              */
             //UserService userService = ProxyHandler.getInstance().getSuperService(ServiceFactory.ServiceTypes.USER);
-            boolean b = userService.addUser(
-                    new UserDTO(
-                            txtID.getText(),
-                            txtName.getText(),
-                            txtPosition.getText(),
-                            cmbPermission.getValue().toString(),
-                            txtDepartment.getText(),
-                            txtAddress.getText(),
-                            txtEmail.getText(),
-                            txtTel.getText(),
-                            txtPass.getText(),
-                            bytes
-                    ));
-            if (b){
-                Notification.createSuccesful("Successfull","User Added Successfully");
-                getAllUsers();
-                clearfields();
+
+
+
+            if ((!txtName.getText().isEmpty()) && Validation.nameValidate(txtName.getText())){
+                            boolean b = userService.addUser(
+                                    new UserDTO(
+                                            txtID.getText(),
+                                            txtName.getText(),
+                                            txtPosition.getText(),
+                                            cmbPermission.getValue().toString(),
+                                            txtDepartment.getText(),
+                                            txtAddress.getText(),
+                                            txtEmail.getText(),
+                                            txtTel.getText(),
+                                            txtPass.getText(),
+                                            bytes
+                                    ));
+                            if (b){
+                                Notification.createSuccesful("Successfull","User Added Successfully");
+                                getAllUsers();
+                                clearfields();
+                            }else {
+                                Notification.createError("Failed","User Cannot be Added");
+                            }
+
             }else {
-                Notification.createError("Failed","User Cannot be Added");
+                Notification.createError("Invalid Full Name","Enter valid Full Name");
+                txtName.requestFocus();
+                txtName.selectAll();
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -178,6 +190,9 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+
+
+
         try {
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgPhoto.getImage(),null);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

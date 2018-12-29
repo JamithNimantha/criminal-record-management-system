@@ -52,7 +52,7 @@
             <Image url="@../../assests/icons8-up-filled-100.png" />
          </image>
       </ImageView>
-      <JFXDatePicker fx:id="datBirth" layoutX="442.0" layoutY="153.0" onAction="#datBirthOnAction" prefHeight="26.0" prefWidth="146.0" promptText="Birthday" style="-fx-font-weight: bold;" />
+      <JFXDatePicker fx:id="datBirth" editable="false" layoutX="442.0" layoutY="153.0" onAction="#datBirthOnAction" prefHeight="26.0" prefWidth="146.0" promptText="Birthday" style="-fx-font-weight: bold;" />
       <JFXTextField fx:id="txtAge" alignment="TOP_LEFT" editable="false" labelFloat="true" layoutX="615.0" layoutY="154.0" prefHeight="26.0" prefWidth="98.0" promptText="Age">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -132,7 +132,7 @@
       </JFXTextField>
       <JFXButton fx:id="btnSave" layoutX="474.0" layoutY="377.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
       <JFXButton fx:id="btnUpdate" layoutX="606.0" layoutY="377.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
-      <JFXButton fx:id="btnRemove" layoutX="739.0" layoutY="377.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
+      <JFXButton fx:id="btnRemove" disable="true" layoutX="739.0" layoutY="377.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
       <TableView fx:id="tblCriminal" layoutX="6.0" layoutY="423.0" onMouseClicked="#tblCriminalOnClicked" prefHeight="273.0" prefWidth="963.0">
         <columns>
           <TableColumn prefWidth="88.0" text="ID" />

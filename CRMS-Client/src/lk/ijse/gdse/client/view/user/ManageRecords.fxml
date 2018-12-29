@@ -40,7 +40,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextArea>
-      <JFXDatePicker fx:id="dateIncidentDate" layoutX="65.0" layoutY="169.0" onAction="#dateIncidentDateOnAction" prefHeight="26.0" prefWidth="378.0" promptText="Incident Date" style="-fx-font-weight: bold;" />
+      <JFXDatePicker fx:id="dateIncidentDate" editable="false" layoutX="65.0" layoutY="169.0" onAction="#dateIncidentDateOnAction" prefHeight="26.0" prefWidth="378.0" promptText="Incident Date" style="-fx-font-weight: bold;" />
       <JFXTimePicker fx:id="timeIncidentTime" layoutX="479.0" layoutY="170.0" onAction="#timeIncidentTimeOnAction" prefHeight="26.0" prefWidth="354.0" promptText="Incident Time" style="-fx-font-weight: bold;" />
       <TableView fx:id="tblRecords" layoutX="11.0" layoutY="410.0" onMouseClicked="#tblRecordsOnMouseClicked" prefHeight="291.0" prefWidth="957.0">
         <columns>

@@ -69,11 +69,11 @@ public class LoginController implements Initializable {
     }
 
     private void checkLogin() throws IOException {
-        /*
-        ********************************
-        One time ID and Pass Generation
-        ********************************
-         */
+                    /*
+                    ********************************
+                    One time ID and Pass Generation
+                    ********************************
+                     */
 
         /* */
 
@@ -104,7 +104,13 @@ public class LoginController implements Initializable {
 //        }
 
 
+                        /*
 
+                        ***********************************
+                                 CODE END HERE
+                        * *********************************
+
+                        */
 
         try {
             if (!(txtID.getText().isEmpty() && txtID.getText().isEmpty())){
