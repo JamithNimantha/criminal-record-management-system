@@ -2,6 +2,7 @@ package lk.ijse.gdse.server.business.custom.impl;
 
 import lk.ijse.gdse.common.dto.RecordDTO;
 import lk.ijse.gdse.server.business.custom.RecordBusiness;
+import lk.ijse.gdse.server.common.IDGenerator;
 import lk.ijse.gdse.server.entity.Record;
 import lk.ijse.gdse.server.repository.RepoFactory;
 import lk.ijse.gdse.server.repository.custom.RecordRepo;
@@ -82,7 +83,7 @@ public class RecordBusinessImpl implements RecordBusiness {
     }
 
     @Override
-    public RecordDTO searchRecord(int id) throws Exception {
+    public RecordDTO searchRecord(String id) throws Exception {
         Record record;
         try (Session session = HibUtil.getSessionFactory().openSession()) {
             recordRepo.setSession(session);

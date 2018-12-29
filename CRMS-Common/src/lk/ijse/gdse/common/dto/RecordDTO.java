@@ -4,7 +4,7 @@ package lk.ijse.gdse.common.dto;
 import java.util.Date;
 
 public class RecordDTO implements SuperDTO{
-    private int recordID;
+    private String recordID;
     private String recordName;
     private String recordCategory;
     private String incidentLocation;
@@ -16,7 +16,7 @@ public class RecordDTO implements SuperDTO{
     public RecordDTO() {
     }
 
-    public RecordDTO(int recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
+    public RecordDTO(String recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
         this.recordID = recordID;
         this.recordName = recordName;
         this.recordCategory = recordCategory;
@@ -27,11 +27,11 @@ public class RecordDTO implements SuperDTO{
         this.recordDec = recordDec;
     }
 
-    public int getRecordID() {
+    public String getRecordID() {
         return recordID;
     }
 
-    public void setRecordID(int recordID) {
+    public void setRecordID(String recordID) {
         this.recordID = recordID;
     }
 

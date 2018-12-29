@@ -84,16 +84,20 @@ public class DashboardController {
 
     @FXML
     void btnRecordsOnAction(ActionEvent event) {
-        Node node= null;
+
         try {
-            node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/user/ManageRecords.fxml"));
+            AnchorPane  node = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/client/view/user/ManageRecords.fxml"));
+//
+//            if (!pnlMain.getChildren().isEmpty()){
+//                pnlMain.getChildren().remove(0);
+//            }
+//            pnlMain.getChildren().add(node);
+            pnlMain.getChildren().setAll(node);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (!pnlMain.getChildren().isEmpty()){
-            pnlMain.getChildren().remove(0);
-        }
-        pnlMain.getChildren().add(node);
+
+
 
     }
 

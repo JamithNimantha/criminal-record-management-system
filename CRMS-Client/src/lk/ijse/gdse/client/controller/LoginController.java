@@ -76,7 +76,7 @@ public class LoginController implements Initializable {
          */
 
         /* */
-//
+
 //        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(imgLogo.getImage(),null);
 //        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 //        ImageIO.write(bufferedImage,"jpg",byteArrayOutputStream);

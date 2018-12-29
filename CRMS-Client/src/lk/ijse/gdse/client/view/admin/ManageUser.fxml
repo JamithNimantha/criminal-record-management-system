@@ -12,73 +12,73 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.admin.ManageUserController">
+<AnchorPane prefHeight="706.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.client.controller.admin.ManageUserController">
    <children>
-      <ImageView fx:id="imgPhoto" fitHeight="270.0" fitWidth="190.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgPhoto" fitHeight="307.0" fitWidth="221.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assests/icons8-administrator-male-100.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="240.0" layoutY="27.0" onAction="#txtIDOnAction" prefHeight="26.0" prefWidth="200.0" promptText="ID">
+      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="254.0" layoutY="27.0" onAction="#txtIDOnAction" prefHeight="26.0" prefWidth="376.0" promptText="ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnSearch" layoutX="470.0" layoutY="25.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
-      <JFXButton fx:id="btnSave" layoutX="315.0" layoutY="288.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
-      <JFXButton fx:id="btnUpdate" layoutX="447.0" layoutY="288.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
-      <JFXButton fx:id="btnRemove" layoutX="580.0" layoutY="288.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="239.0" layoutY="72.0" onAction="#txtNameOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Full Name">
+      <JFXButton fx:id="btnSearch" layoutX="660.0" layoutY="25.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
+      <JFXButton fx:id="btnSave" layoutX="569.0" layoutY="285.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
+      <JFXButton fx:id="btnUpdate" layoutX="701.0" layoutY="285.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
+      <JFXButton fx:id="btnRemove" layoutX="834.0" layoutY="285.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="256.0" layoutY="72.0" onAction="#txtNameOnAction" prefHeight="26.0" prefWidth="636.0" promptText="Full Name">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPosition" labelFloat="true" layoutX="239.0" layoutY="116.0" onAction="#txtName" prefHeight="26.0" prefWidth="234.0" promptText="Position">
+      <JFXTextField fx:id="txtPosition" labelFloat="true" layoutX="255.0" layoutY="116.0" onAction="#txtName" prefHeight="26.0" prefWidth="345.0" promptText="Position">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtDepartment" labelFloat="true" layoutX="238.0" layoutY="158.0" onAction="#txtDepartmentOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Department">
+      <JFXTextField fx:id="txtDepartment" labelFloat="true" layoutX="255.0" layoutY="158.0" onAction="#txtDepartmentOnAction" prefHeight="26.0" prefWidth="636.0" promptText="Department">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbPermission" labelFloat="true" layoutX="496.0" layoutY="116.0" onAction="#cmbPermissionOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Permission Level" style="-fx-font-weight: bold;" />
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="238.0" layoutY="199.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Official Address">
+      <JFXComboBox fx:id="cmbPermission" labelFloat="true" layoutX="631.0" layoutY="116.0" onAction="#cmbPermissionOnAction" prefHeight="26.0" prefWidth="255.0" promptText="Permission Level" style="-fx-font-weight: bold;" />
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="255.0" layoutY="199.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="636.0" promptText="Official Address">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="18.0" layoutY="243.0" onAction="#txtEmail" prefHeight="26.0" prefWidth="365.0" promptText="E-Mail">
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="258.0" layoutY="240.0" onAction="#txtEmail" prefHeight="26.0" prefWidth="272.0" promptText="E-Mail">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtTel" labelFloat="true" layoutX="416.0" layoutY="243.0" onAction="#txtTelOnAction" prefHeight="26.0" prefWidth="286.0" promptText="Telphone Number">
+      <JFXTextField fx:id="txtTel" labelFloat="true" layoutX="564.0" layoutY="241.0" onAction="#txtTelOnAction" prefHeight="26.0" prefWidth="328.0" promptText="Telphone Number">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="txtPass" labelFloat="true" layoutX="18.0" layoutY="288.0" onAction="#txtPassOnAction" prefHeight="26.0" prefWidth="241.0" promptText="Password">
+      <JFXPasswordField fx:id="txtPass" labelFloat="true" layoutX="259.0" layoutY="283.0" onAction="#txtPassOnAction" prefHeight="26.0" prefWidth="272.0" promptText="Password">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXPasswordField>
-      <TableView fx:id="tblUser" layoutX="6.0" layoutY="332.0" onMouseClicked="#tblUserOnMouseClicked" prefHeight="288.0" prefWidth="717.0">
+      <TableView fx:id="tblUser" layoutX="6.0" layoutY="329.0" onMouseClicked="#tblUserOnMouseClicked" prefHeight="368.0" prefWidth="965.0">
         <columns>
-          <TableColumn prefWidth="104.0" text="ID" />
-          <TableColumn prefWidth="144.0" text="Name" />
-            <TableColumn prefWidth="131.0" text="Position" />
-            <TableColumn prefWidth="216.0" text="Department" />
-            <TableColumn prefWidth="121.0" text="Permission" />
+          <TableColumn prefWidth="113.0" text="ID" />
+          <TableColumn prefWidth="238.0" text="Name" />
+            <TableColumn prefWidth="175.0" text="Position" />
+            <TableColumn prefWidth="229.0" text="Department" />
+            <TableColumn prefWidth="208.0" text="Permission" />
         </columns>
       </TableView>
-      <Button fx:id="btnUpload" layoutX="36.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnUploadOnAction" prefHeight="26.0" prefWidth="146.0" text="Upload Photo" textAlignment="RIGHT">
+      <Button fx:id="btnUpload" layoutX="44.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnUploadOnAction" prefHeight="26.0" prefWidth="146.0" text="Upload Photo" textAlignment="RIGHT">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ImageView fitHeight="18.0" fitWidth="27.0" layoutX="41.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="18.0" fitWidth="27.0" layoutX="51.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assests/icons8-up-filled-100.png" />
          </image>

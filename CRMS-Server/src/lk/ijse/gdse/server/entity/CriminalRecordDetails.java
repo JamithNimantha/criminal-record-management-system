@@ -1,23 +1,38 @@
 package lk.ijse.gdse.server.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class CriminalRecordDetails implements Serializable {
-    @Id
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Criminal criminal;
-    @Id
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Record record;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int incriment;
 
     public CriminalRecordDetails(Criminal criminal, Record record) {
         this.criminal = criminal;
         this.record = record;
+    }
+
+    public CriminalRecordDetails(Criminal criminal, Record record,int incriment ) {
+        this.criminal = criminal;
+        this.record = record;
+        this.incriment=incriment;
+    }
+
+    public int getIncriment() {
+        return incriment;
+    }
+
+    public void setIncriment(int incriment) {
+        this.incriment = incriment;
     }
 
     public Criminal getCriminal() {

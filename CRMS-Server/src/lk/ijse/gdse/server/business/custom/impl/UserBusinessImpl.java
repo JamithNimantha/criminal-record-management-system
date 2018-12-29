@@ -2,6 +2,7 @@ package lk.ijse.gdse.server.business.custom.impl;
 
 import lk.ijse.gdse.common.dto.UserDTO;
 import lk.ijse.gdse.server.business.custom.UserBusiness;
+import lk.ijse.gdse.server.common.IDGenerator;
 import lk.ijse.gdse.server.entity.User;
 import lk.ijse.gdse.server.repository.RepoFactory;
 import lk.ijse.gdse.server.repository.custom.UserRepo;

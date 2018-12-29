@@ -26,12 +26,12 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="443.0" layoutY="21.0" onAction="#txtIDOnAction" prefHeight="26.0" prefWidth="200.0" promptText="ID">
+      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="443.0" layoutY="21.0" onAction="#txtIDOnAction" prefHeight="26.0" prefWidth="318.0" promptText="ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnSearch" layoutX="673.0" layoutY="19.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
+      <JFXButton fx:id="btnSearch" layoutX="796.0" layoutY="22.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="78.0" styleClass="button-search" stylesheets="@../../css/style.css" text="Search" />
       <JFXTextField fx:id="txtName" labelFloat="true" layoutX="442.0" layoutY="66.0" onAction="#txtNameOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Full Name">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -52,8 +52,8 @@
             <Image url="@../../assests/icons8-up-filled-100.png" />
          </image>
       </ImageView>
-      <JFXDatePicker fx:id="datBirth" layoutX="442.0" layoutY="153.0" onAction="#datBirthOnAction" prefHeight="26.0" prefWidth="200.0" promptText="Birthday" style="-fx-font-weight: bold;" />
-      <JFXTextField fx:id="txtAge" alignment="TOP_LEFT" labelFloat="true" layoutX="655.0" layoutY="154.0" prefHeight="26.0" prefWidth="146.0" promptText="Age">
+      <JFXDatePicker fx:id="datBirth" layoutX="442.0" layoutY="153.0" onAction="#datBirthOnAction" prefHeight="26.0" prefWidth="146.0" promptText="Birthday" style="-fx-font-weight: bold;" />
+      <JFXTextField fx:id="txtAge" alignment="TOP_LEFT" editable="false" labelFloat="true" layoutX="615.0" layoutY="154.0" prefHeight="26.0" prefWidth="98.0" promptText="Age">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -63,12 +63,12 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtOccupation" labelFloat="true" layoutX="589.0" layoutY="232.0" onAction="#txtOccupation" prefHeight="26.0" prefWidth="318.0" promptText="Occupation">
+      <JFXTextField fx:id="txtOccupation" labelFloat="true" layoutX="658.0" layoutY="238.0" onAction="#txtOccupation" prefHeight="26.0" prefWidth="249.0" promptText="Occupation">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="443.0" layoutY="270.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Address">
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="443.0" layoutY="278.0" onAction="#txtAddressOnAction" prefHeight="26.0" prefWidth="463.0" promptText="Address">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -78,39 +78,39 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtHeight" labelFloat="true" layoutX="468.0" layoutY="312.0" onAction="#txtHeightOnAction" prefHeight="26.0" prefWidth="98.0" promptText="Height">
+      <JFXTextField fx:id="txtHeight" labelFloat="true" layoutX="468.0" layoutY="318.0" onAction="#txtHeightOnAction" prefHeight="26.0" prefWidth="98.0" promptText="Height">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtHair" labelFloat="true" layoutX="712.0" layoutY="312.0" onAction="#txtHairOnAction" prefHeight="26.0" prefWidth="98.0" promptText="Hair">
+      <JFXTextField fx:id="txtHair" labelFloat="true" layoutX="712.0" layoutY="318.0" onAction="#txtHairOnAction" prefHeight="26.0" prefWidth="98.0" promptText="Hair">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEyes" labelFloat="true" layoutX="822.0" layoutY="311.0" onAction="#txtEyes" prefHeight="26.0" prefWidth="112.0" promptText="Eyes">
+      <JFXTextField fx:id="txtEyes" labelFloat="true" layoutX="822.0" layoutY="317.0" onAction="#txtEyes" prefHeight="26.0" prefWidth="112.0" promptText="Eyes">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
       <JFXDrawersStack layoutX="143.0" layoutY="426.0" />
-      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="821.0" layoutY="155.0" prefHeight="26.0" prefWidth="88.0" promptText="Gender" style="-fx-font-weight: bold;" />
-      <JFXTextField fx:id="txtComplexion" labelFloat="true" layoutX="583.0" layoutY="312.0" onAction="#txtComplexionOnAction" prefHeight="26.0" prefWidth="112.0" promptText="Complexion">
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="749.0" layoutY="155.0" onAction="#cmbGenderOnAction" prefHeight="26.0" prefWidth="146.0" promptText="Gender" style="-fx-font-weight: bold;" />
+      <JFXTextField fx:id="txtComplexion" labelFloat="true" layoutX="583.0" layoutY="318.0" onAction="#txtComplexionOnAction" prefHeight="26.0" prefWidth="112.0" promptText="Complexion">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtReligion" labelFloat="true" layoutX="319.0" layoutY="313.0" onAction="#txtReligionOnAction" prefHeight="26.0" prefWidth="131.0" promptText="Religion">
+      <JFXTextField fx:id="txtReligion" labelFloat="true" layoutX="319.0" layoutY="319.0" onAction="#txtReligionOnAction" prefHeight="26.0" prefWidth="131.0" promptText="Religion">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEthnicity" labelFloat="true" layoutX="34.0" layoutY="314.0" onAction="#txtEthnicityOnAction" prefHeight="26.0" prefWidth="112.0" promptText="Ethnicity">
+      <JFXTextField fx:id="txtEthnicity" labelFloat="true" layoutX="34.0" layoutY="320.0" onAction="#txtEthnicityOnAction" prefHeight="26.0" prefWidth="112.0" promptText="Ethnicity">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPolitic" labelFloat="true" layoutX="166.0" layoutY="314.0" onAction="#txtPoliticOnAction" prefHeight="26.0" prefWidth="131.0" promptText="Political View">
+      <JFXTextField fx:id="txtPolitic" labelFloat="true" layoutX="166.0" layoutY="320.0" onAction="#txtPoliticOnAction" prefHeight="26.0" prefWidth="131.0" promptText="Political View">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -130,10 +130,10 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnSave" layoutX="312.0" layoutY="421.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
-      <JFXButton fx:id="btnUpdate" layoutX="444.0" layoutY="421.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
-      <JFXButton fx:id="btnRemove" layoutX="577.0" layoutY="421.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
-      <TableView fx:id="tblCriminal" layoutX="6.0" layoutY="470.0" prefHeight="226.0" prefWidth="963.0">
+      <JFXButton fx:id="btnSave" layoutX="474.0" layoutY="377.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-save" stylesheets="@../../css/style.css" text="Save" />
+      <JFXButton fx:id="btnUpdate" layoutX="606.0" layoutY="377.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-update" stylesheets="@../../css/style.css" text="Update" />
+      <JFXButton fx:id="btnRemove" layoutX="739.0" layoutY="377.0" onAction="#btnRemoveOnAction" prefHeight="30.0" prefWidth="86.0" styleClass="button-remove" stylesheets="@../../css/style.css" text="Remove" />
+      <TableView fx:id="tblCriminal" layoutX="6.0" layoutY="423.0" onMouseClicked="#tblCriminalOnClicked" prefHeight="273.0" prefWidth="963.0">
         <columns>
           <TableColumn prefWidth="88.0" text="ID" />
           <TableColumn prefWidth="192.0" text="Full Name" />
@@ -145,6 +145,6 @@
             <TableColumn prefWidth="107.0" text="Record ID" />
         </columns>
       </TableView>
-      <JFXComboBox fx:id="cmbCivilStatus" labelFloat="true" layoutX="443.0" layoutY="231.0" prefHeight="26.0" prefWidth="131.0" promptText="Civil Status" style="-fx-font-weight: bold;" />
+      <JFXComboBox fx:id="cmbCivilStatus" labelFloat="true" layoutX="443.0" layoutY="237.0" prefHeight="26.0" prefWidth="211.0" promptText="Civil Status" style="-fx-font-weight: bold;" />
    </children>
 </AnchorPane>

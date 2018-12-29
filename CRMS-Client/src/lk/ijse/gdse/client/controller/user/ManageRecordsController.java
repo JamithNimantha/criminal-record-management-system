@@ -10,14 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import lk.ijse.gdse.client.common.DateConverter;
 import lk.ijse.gdse.client.common.Notification;
 import lk.ijse.gdse.client.proxy.ProxyHandler;
 import lk.ijse.gdse.common.dto.RecordDTO;
+import lk.ijse.gdse.common.service.ServiceFactory;
 import lk.ijse.gdse.common.service.custom.RecordService;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.Time;
-import java.time.*;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,6 +45,7 @@ public class ManageRecordsController implements Initializable {
     @FXML
     private JFXDatePicker dateIncidentDate;
 
+
     @FXML
     private JFXTimePicker timeIncidentTime;
 
@@ -62,7 +64,14 @@ public class ManageRecordsController implements Initializable {
     @FXML
     private JFXButton btnRemove;
 
-    private RecordService recordService;
+    private static RecordService recordService;
+    static {
+        try {
+            recordService=ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
@@ -70,7 +79,7 @@ public class ManageRecordsController implements Initializable {
         try {
             result = recordService.addRecord(
                     new RecordDTO(
-                            Integer.parseInt(txtRecordID.getText()),
+                            txtRecordID.getText(),
                             txtRecordName.getText(),
                             cmbRecordcategory.getSelectionModel().getSelectedItem(),
                             txtIncidentLocation.getText(),
@@ -98,7 +107,7 @@ public class ManageRecordsController implements Initializable {
         try {
             result = recordService.addRecord(
                     new RecordDTO(
-                        Integer.parseInt(txtRecordID.getText()),
+                        txtRecordID.getText(),
                         txtRecordName.getText(),
                         cmbRecordcategory.getSelectionModel().getSelectedItem(),
                         txtIncidentLocation.getText(),
@@ -125,13 +134,13 @@ public class ManageRecordsController implements Initializable {
     @FXML
     void btnSearchOnAction(ActionEvent event) {
         try {
-            RecordDTO selectedItem = recordService.searchRecord(Integer.parseInt(txtRecordID.getText()));
+            RecordDTO selectedItem = recordService.searchRecord(txtRecordID.getText());
             txtRecordID.setText(String.valueOf(selectedItem.getRecordID()));
             txtRecordName.setText(selectedItem.getRecordName());
             cmbRecordcategory.setValue(selectedItem.getRecordCategory());
             txtIncidentLocation.setText(selectedItem.getIncidentLocation());
-            dateIncidentDate.setValue(fromDate(selectedItem.getIncidentDate()));
-            timeIncidentTime.setValue(fromTime(selectedItem.getIncidentTIme()));
+            dateIncidentDate.setValue(DateConverter.fromDate(selectedItem.getIncidentDate()));
+            timeIncidentTime.setValue(DateConverter.fromTime(selectedItem.getIncidentTIme()));
             txtVictimName.setText(selectedItem.getVictimsName());
             txtRecordDescription.setText(selectedItem.getRecordDec());
         } catch (Exception e) {
@@ -147,7 +156,7 @@ public class ManageRecordsController implements Initializable {
         try {
             result = recordService.updateRecord(
                     new RecordDTO(
-                            Integer.parseInt(txtRecordID.getText()),
+                            txtRecordID.getText(),
                             txtRecordName.getText(),
                             cmbRecordcategory.getSelectionModel().getSelectedItem(),
                             txtIncidentLocation.getText(),
@@ -215,11 +224,11 @@ public class ManageRecordsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
-            recordService= ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+////            recordService= ProxyHandler.getInstance().getSuperService(ProxyHandler.ServiceTypes.RECORD);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         Platform.runLater(() -> txtRecordID.requestFocus());
 
         setCrimeCategory();
@@ -228,7 +237,7 @@ public class ManageRecordsController implements Initializable {
         tblRecords.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("recordName"));
         tblRecords.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("incidentDate"));
         tblRecords.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("victimsName"));
-        getAllRecords();
+//        getAllRecords();
 
     }
     void setCrimeCategory(){
@@ -246,6 +255,7 @@ public class ManageRecordsController implements Initializable {
         txtVictimName.clear();
         dateIncidentDate.setValue(null);
         timeIncidentTime.setValue(null);
+        txtRecordID.requestFocus();
     }
 
     @FXML
@@ -256,33 +266,23 @@ public class ManageRecordsController implements Initializable {
             txtRecordName.setText(selectedItem.getRecordName());
             cmbRecordcategory.setValue(selectedItem.getRecordCategory());
             txtIncidentLocation.setText(selectedItem.getIncidentLocation());
-            dateIncidentDate.setValue(fromDate(selectedItem.getIncidentDate()));
-            timeIncidentTime.setValue(fromTime(selectedItem.getIncidentTIme()));
+            dateIncidentDate.setValue(DateConverter.fromDate(selectedItem.getIncidentDate()));
+            timeIncidentTime.setValue(DateConverter.fromTime(selectedItem.getIncidentTIme()));
             txtVictimName.setText(selectedItem.getVictimsName());
             txtRecordDescription.setText(selectedItem.getRecordDec());
 
         }
 
     }
-    private LocalDate fromDate(java.util.Date date) {
-        Instant instant = Instant.ofEpochMilli(date.getTime());
-        return LocalDateTime.ofInstant(instant, ZoneId.systemDefault())
-                .toLocalDate();
-    }
-    private LocalTime fromTime(java.util.Date date) {
-        Instant instant = Instant.ofEpochMilli(date.getTime());
-        return LocalDateTime.ofInstant(instant, ZoneId.systemDefault())
-                .toLocalTime();
-    }
 
     private void getAllRecords(){
         List<RecordDTO> recordDTOS = null;
         try {
-            recordDTOS = recordService.getAllRecords();
+//            recordDTOS = recordService.getAllRecords();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        tblRecords.setItems(FXCollections.observableArrayList(recordDTOS));
+//        tblRecords.setItems(FXCollections.observableArrayList(recordDTOS));
     }
 
 }

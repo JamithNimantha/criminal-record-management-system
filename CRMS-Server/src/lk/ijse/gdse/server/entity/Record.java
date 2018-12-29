@@ -8,8 +8,8 @@ import java.util.List;
 @Entity
 public class Record {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int recordID;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String recordID;
     private String recordName;
     private String recordCategory;
     private String incidentLocation;
@@ -26,7 +26,7 @@ public class Record {
 
     }
 
-    public Record(int recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
+    public Record(String recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec) {
         this.recordID = recordID;
         this.recordName = recordName;
         this.recordCategory = recordCategory;
@@ -37,7 +37,7 @@ public class Record {
         this.recordDec = recordDec;
     }
 
-    public Record(int recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec, List<CriminalRecordDetails> criminalRecordDetails) {
+    public Record(String recordID, String recordName, String recordCategory, String incidentLocation, Date incidentDate, Date incidentTIme, String victimsName, String recordDec, List<CriminalRecordDetails> criminalRecordDetails) {
         this.recordID = recordID;
         this.recordName = recordName;
         this.recordCategory = recordCategory;
@@ -69,11 +69,11 @@ public class Record {
 //        this.criminalRecordDetails = criminalRecordDetails;
 //    }
 
-    public int getRecordID() {
+    public String getRecordID() {
         return recordID;
     }
 
-    public void setRecordID(int recordID) {
+    public void setRecordID(String recordID) {
         this.recordID = recordID;
     }
 

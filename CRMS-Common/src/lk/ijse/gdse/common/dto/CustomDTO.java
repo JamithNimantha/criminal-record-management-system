@@ -1,9 +1,16 @@
 package lk.ijse.gdse.common.dto;
 
-import java.util.Arrays;
 import java.util.Date;
 
-public class CriminalDTO implements SuperDTO{
+public class CustomDTO implements SuperDTO {
+//    private String criminalId;
+//    private String criminalName;
+//    private String gender;
+//    private String ethnicity;
+//    private String criminalNIC;
+//    private String civilStatus;
+//    private String address;
+
     private String criminalId;
     private String criminalName;
     private String criminalNickName;
@@ -25,11 +32,20 @@ public class CriminalDTO implements SuperDTO{
     private String eyes;
     private byte[] photo;
 
+    private String recordID;
 
-    public CriminalDTO() {
+    public CustomDTO(String criminalId, String criminalName, String gender, String ethnicity, String criminalNIC, String civilStatus, String address, String recordID) {
+        this.criminalId = criminalId;
+        this.criminalName = criminalName;
+        this.gender = gender;
+        this.ethnicity = ethnicity;
+        this.criminalNIC = criminalNIC;
+        this.civilStatus = civilStatus;
+        this.address = address;
+        this.recordID = recordID;
     }
 
-    public CriminalDTO(String criminalId, String criminalName, String criminalNickName, String criminalNIC, Date criminalDOB, int age, String gender, String birthRegID, String birthPlace, String civilStatus, String occupation, String address, String ethnicity, String politicalView, String religion, double height, String complexion, String hair, String eyes, byte[] photo) {
+    public CustomDTO(String criminalId, String criminalName, String criminalNickName, String criminalNIC, Date criminalDOB, int age, String gender, String birthRegID, String birthPlace, String civilStatus, String occupation, String address, String ethnicity, String politicalView, String religion, double height, String complexion, String hair, String eyes, byte[] photo, String recordID) {
         this.criminalId = criminalId;
         this.criminalName = criminalName;
         this.criminalNickName = criminalNickName;
@@ -50,6 +66,7 @@ public class CriminalDTO implements SuperDTO{
         this.hair = hair;
         this.eyes = eyes;
         this.photo = photo;
+        this.recordID = recordID;
     }
 
     public String getCriminalId() {
@@ -212,29 +229,12 @@ public class CriminalDTO implements SuperDTO{
         this.photo = photo;
     }
 
-    @Override
-    public String toString() {
-        return "CriminalDTO{" +
-                "criminalId=" + criminalId +
-                ", criminalName='" + criminalName + '\'' +
-                ", criminalNickName='" + criminalNickName + '\'' +
-                ", criminalNIC='" + criminalNIC + '\'' +
-                ", criminalDOB='" + criminalDOB + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", birthRegID='" + birthRegID + '\'' +
-                ", birthPlace='" + birthPlace + '\'' +
-                ", civilStatus='" + civilStatus + '\'' +
-                ", occupation='" + occupation + '\'' +
-                ", address='" + address + '\'' +
-                ", ethnicity='" + ethnicity + '\'' +
-                ", politicalView='" + politicalView + '\'' +
-                ", religion='" + religion + '\'' +
-                ", height=" + height +
-                ", complexion='" + complexion + '\'' +
-                ", hair='" + hair + '\'' +
-                ", eyes='" + eyes + '\'' +
-                ", photo=" + Arrays.toString(photo) +
-                '}';
+    public String getRecordID() {
+        return recordID;
     }
+
+    public void setRecordID(String recordID) {
+        this.recordID = recordID;
+    }
+
 }

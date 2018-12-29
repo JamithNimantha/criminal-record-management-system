@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
@@ -233,7 +234,7 @@ public class ManageUserController implements Initializable {
                 imgPhoto.setSmooth(true);
 
             }else {
-                System.out.println("didnt select a file");
+                Notification.createError("photo not Selected","You have not selected a Photo");
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -243,6 +244,7 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void cmbPermissionOnAction(ActionEvent event) {
+        txtDepartment.requestFocus();
 
     }
 
@@ -286,36 +288,42 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void txtAddressOnAction(ActionEvent event) {
+        txtEmail.requestFocus();
 
     }
 
     @FXML
     void txtDepartmentOnAction(ActionEvent event) {
+        txtAddress.requestFocus();
 
     }
 
     @FXML
     void txtEmail(ActionEvent event) {
+        txtTel.requestFocus();
 
     }
 
     @FXML
     void txtIDOnAction(ActionEvent event) {
+        txtName.requestFocus();
 
     }
 
     @FXML
     void txtName(ActionEvent event) {
+        cmbPermission.requestFocus();
 
     }
 
     @FXML
     void txtNameOnAction(ActionEvent event) {
-
+        txtPosition.requestFocus();
     }
 
     @FXML
     void txtPassOnAction(ActionEvent event) {
+        btnSaveOnAction(event);
 
     }
 
@@ -327,6 +335,7 @@ public class ManageUserController implements Initializable {
 
     @FXML
     void txtTelOnAction(ActionEvent event) {
+        txtPass.requestFocus();
 
     }
     void setPermission(){
@@ -342,6 +351,7 @@ public class ManageUserController implements Initializable {
             e.printStackTrace();
         }
         setPermission();
+        Platform.runLater(() -> txtID.requestFocus());
         tblUser.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("ID"));
         tblUser.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblUser.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("position"));
@@ -371,6 +381,7 @@ public class ManageUserController implements Initializable {
         txtTel.clear();
         txtPass.clear();
         imgPhoto.setImage(new Image("lk/ijse/gdse/client/assests/icons8-administrator-male-100.png"));
+        txtID.requestFocus();
     }
 
 }

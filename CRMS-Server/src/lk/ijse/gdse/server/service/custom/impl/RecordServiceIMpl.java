@@ -56,7 +56,7 @@ public class RecordServiceIMpl extends UnicastRemoteObject implements RecordServ
     }
 
     @Override
-    public RecordDTO searchRecord(int id) throws Exception {
+    public RecordDTO searchRecord(String id) throws Exception {
         return recordBusiness.searchRecord(id);
     }
 
